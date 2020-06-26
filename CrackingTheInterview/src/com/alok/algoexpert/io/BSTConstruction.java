@@ -8,18 +8,30 @@ package com.alok.algoexpert.io;
  *
  */
 public class BSTConstruction {
-
+	
 	public static void main(String[] args) {
-		 BSTConstruction bstConstruction = new BSTConstruction();
-		 BST bst= bstConstruction.new BST(10);	
-		 bst.insert(10);
-		// BST bst = bstConstruction.new BST(10);
-		// bst.insert(10);
+		BST bst = new BST(10);
+		bst.insert(5);
+		bst.insert(15);
+		bst.insert(2);
+		bst.insert(5);
+		bst.insert(13);
+		bst.insert(22);
+		bst.insert(1);
+		bst.insert(14);
+		bst.insert(12);
 		
-
+		bst.display();
+		
+		System.out.println();
+		boolean isContains = bst.contains(15);
+		System.out.println(isContains);
+		
+		bst = bst.remove(10);
+		bst.display();
 	}
 
-	public class BST {
+	static class BST {
 		public int value;
 		public BST left;
 		public BST right;
@@ -27,99 +39,96 @@ public class BSTConstruction {
 		public BST(int value) {
 			this.value = value;
 		}
-
-		private BST root;
+		
+		public void display() {
+			display(this);
+		}
+		
+		private void display(BST node) {
+			if(node == null) {
+				return;
+			}
+			display(node.left);
+			System.out.print(node.value + " ");
+			display(node.right);
+		}
 
 		public BST insert(int value) {
 			// Write your code here.
 			// Do not edit the return statement of this method.
-			
-			
-//			if (value < this.value) {
-//				if (left == null) {
-//					BST node = new BST(value);
-//					left = node;
-//				} else {
-//					left.insert(value);
-//				}
-//			} else {
-//				if (right == null) {
-//					BST node = new BST(value);
-//					right = node;
-//				} else {
-//					right.insert(value);
-//				}
-//			}
-
-			BST node = new BST(value);
 			BST current = this;
-			while (current != null) {
-				if (current.value > value) {
-					if (current.left == null) {
-						current.left = node;
+			while(current != null) {
+				if(current.value > value) {
+					if(current.left == null) {
+						current.left = new BST(value);
 						break;
 					}
 					current = current.left;
-				} else if (current.value < value) {
-					if (current.right == null) {
-						current.right = node;
+				}else if(current.value <= value) {
+					if(current.right == null) {
+						current.right = new BST(value);
 						break;
 					}
 					current = current.right;
 				}
 			}
-
 			return this;
 		}
+		
 
-		public boolean contains(int value) {
-			// Write your code here.
-			BST current = this;
-			while (current != null) {
-				if (current.value == value) {
-					return true;
-				}
-				if (current.value > value) {
-					current = current.left;
-				} else if (current.value < value) {
-					current = current.right;
-				}
-			}
-			return false;
+    public boolean contains(int value) {
+      // Write your code here.
+    	if(this.value == value) {
+    		return true;
+    	}
+    	BST current = this;
+    	while(current != null) {
+    		if(current.value > value) {
+    			current = current.left;
+    		}else if(current.value < value) {
+    			current = current.right;
+    		}else {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+		
+
+    public BST remove(int value) {
+		// Write your code here.
+		// Do not edit the return statement of this method.
+		if(left == null && right == null){
+			return this;	
 		}
-
-		public BST remove(int value) {
-			// Write your code here.
-			// Do not edit the return statement of this method.
-			if (this.left == null && this.right == null) {
-				return this;
+		return removeItem(this,value);
+    }
+		
+		private BST removeItem(BST node, int item){
+			if(node == null){
+				return node;
 			}
-			return removeItem(this, value);
-		}
-
-		private BST removeItem(BST node, int item) {
-			if (node == null) {
-				return null;
-			}
-			if (node.value > value) {
+			if(node.value > value){
 				node.left = removeItem(node.left, item);
-			} else if (node.value < value) {
+			}
+			else if(node.value < value){
 				node.right = removeItem(node.right, item);
-			} else if (node.left == null) {
+			}
+			else if(node.left == null){
 				return node.right;
-			} else if (node.right == null) {
+			}else if(node.right == null){
 				return node.left;
-			} else {
+			}else{
 				BST successor = node.right;
-				int minValue = node.value;
-				while (successor.left != null) {
-					successor = successor.left;
-					minValue = successor.left.value;
+				int minValue = successor.value;
+				while(successor.left != null){
+						minValue = successor.left.value;
+						successor = successor.left;
 				}
 				node.value = minValue;
 				node.right = removeItem(node.right, minValue);
 			}
-			return this;
-		}
+			return node;
+		} 
 	}
 }
