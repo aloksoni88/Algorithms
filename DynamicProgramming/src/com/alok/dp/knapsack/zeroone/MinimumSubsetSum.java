@@ -1,4 +1,4 @@
-package com.alok.dp.knapsack;
+package com.alok.dp.knapsack.zeroone;
 
 /**
  * @author Alok Soni
