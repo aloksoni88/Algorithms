@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package com.alok.algoexpert.io.medium;
+
+import java.util.List;
+
+/**
+ * @author Alok Soni
+ *
+ */
+public class RiverSizesProblem {
+	public static void main(String[] args) {
+		int[][] matrix = new int[][]{
+		                  {1, 0, 0, 1, 0},
+		                  {1, 0, 1, 0, 0},
+		                  {0, 0, 1, 0, 1},
+		                  {1, 0, 1, 0, 1},
+		                  {1, 0, 1, 1, 0}
+						};
+		
+	}
+	
+	public static List<Integer> riverSizes(int[][] matrix) {
+		return null;
+	}
+}

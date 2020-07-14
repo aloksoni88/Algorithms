@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package com.alok.algoexpert.io.medium;
+
+/**
+ * @author Alok Soni
+ *
+ */
+public class SingleCycleCheck {
+	public static void main(String[] args) {
+		
+	}
+	public static boolean hasSingleCycle(int[] array) {
+		if (array == null || array.length == 0) {
+			return false;
+		}
+		boolean[] tmpArr = new boolean[array.length];
+		for (int i = 0; i < array.length; i++) {
+			int cycleIndex = (i + array[i]) % array.length;
+			if (array[i] >= 0) {
+				tmpArr[cycleIndex] = true;
+			} else {
+				cycleIndex = array.length + cycleIndex;
+				tmpArr[cycleIndex] = true;
+			}
+		}
+		for (int i = 0; i < tmpArr.length; i++) {
+			if (!tmpArr[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+}

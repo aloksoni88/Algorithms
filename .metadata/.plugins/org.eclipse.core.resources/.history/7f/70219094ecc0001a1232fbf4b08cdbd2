@@ -1,0 +1,60 @@
+/**
+ * 
+ */
+package com.alok.dp.knapsack.unbounded;
+
+/**
+ * @author Alok Soni
+ * Question
+ * Given two strings ‘str1’ and ‘str2’ of size m and n respectively. The task is to remove/delete and insert minimum number of characters from/in str1 so as to transform it into str2. It could be possible that the same character needs to be removed/deleted from one point of str1 and inserted to some another point.
+
+	Examples:	
+	Input : str1 = "heap", str2 = "pea" 
+	Output : Minimum Deletion = 2 and
+	         Minimum Insertion = 1
+	p and h deleted from heap
+	Then, p is inserted at the beginning
+	One thing to note, though p was required yet
+	it was removed/deleted first from its position and
+	then it is inserted to some other position.
+	Thus, p contributes one to the deletion_count
+	and one to the insertion_count.
+	
+	Input : str1 = "geeksforgeeks", str2 = "geeks"
+	Output : Minimum Deletion = 8
+	         Minimum Insertion = 0       
+ */
+public class StringFormInsertionDeletion {
+	public static void main(String[] args) {
+		String str1 = "ABCDGH";
+		String str2 = "pea";
+		StringBuffer result = getLCMRecursive(str1, str2, str1.length(), str2.length(), new StringBuffer());
+		System.out.println(result.reverse());
+	}
+	
+	private static StringBuffer getLCMRecursive(String str1, String str2, int m, int n, StringBuffer lcm) {
+		if(m == 0 || n ==0 ) {
+			return lcm;
+		}else if(str1.charAt(m-1) == str2.charAt(n-1)) {
+			char c = str1.charAt(m-1);
+			if(!lcm.toString().contains(c+"")) {
+				lcm.append(c);
+			}
+			return getLCMRecursive(str1, str2, m-1, n-1, lcm);
+		}else {
+			String result = lcm.toString();
+			StringBuffer s1 = getLCMRecursive(str1, str2, m, n-1, new StringBuffer());
+			StringBuffer s2 = getLCMRecursive(str1, str2, m-1, n, new StringBuffer());
+			if(s1.length() > s2.length()) {
+				if(s1.length() > result.length()) {
+					lcm = new StringBuffer(s1);
+				}
+			}else {
+				if(s2.length() > result.length()) {
+					lcm = new StringBuffer(s2);
+				}
+			}
+			return lcm;
+		}
+	}
+}

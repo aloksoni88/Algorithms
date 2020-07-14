@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package com.alok.algoexpert.io.medium;
+
+import java.util.List;
+
+/**
+ * @author Alok Soni
+ *
+ */
+public class RiverSizesProblem {
+	public static void main(String[] args) {
+		int[][] matrix = new int[][]{
+		                  {1, 0, 0, 1, 0},
+		                  {1, 0, 1, 0, 0},
+		                  {0, 0, 1, 0, 1},
+		                  {1, 0, 1, 0, 1},
+		                  {1, 0, 1, 1, 0}
+						};
+		List<Integer> riverSizes = riverSizes(matrix);
+		System.out.println("River Sizes : "+ riverSizes);
+	}
+	
+	public static List<Integer> riverSizes(int[][] matrix) {
+		int m = matrix.length;
+		int n = matrix[0].length;
+		boolean[][] tmpArr = new boolean[m][n];
+		for(int i=0; i<m; i++) {
+			for(int j=0; j<n; j++) {
+				
+			}
+		}
+		return null;
+	}
+}
