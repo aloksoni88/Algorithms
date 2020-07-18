@@ -6,7 +6,7 @@ package com.alok.dp.knapsack.unbounded;
 /**
  * @author Alok Soni
  * Question
- * Given two strings ‘str1’ and ‘str2’ of size m and n respectively. The task is to remove/delete and insert minimum number of characters from/in str1 so as to transform it into str2. It could be possible that the same character needs to be removed/deleted from one point of str1 and inserted to some another point.
+ * Given two strings ï¿½str1ï¿½ and ï¿½str2ï¿½ of size m and n respectively. The task is to remove/delete and insert minimum number of characters from/in str1 so as to transform it into str2. It could be possible that the same character needs to be removed/deleted from one point of str1 and inserted to some another point.
 
 	Examples:	
 	Input : str1 = "heap", str2 = "pea" 

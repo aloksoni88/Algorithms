@@ -5,20 +5,36 @@ package com.alok.dp.knapsack.unbounded;
 
 /**
  * @author Alok Soni
- * Question : Longest common subsequence
- * LCS for input Sequences �ABCDGH� and �AEDFHR� is �ADH� of length 3.
-   LCS for input Sequences �AGGTAB� and �GXTXAYB� is �GTAB� of length 4.
+ * Question
+ * Given two strings �str1� and �str2� of size m and n respectively. The task is to remove/delete and insert minimum number of characters from/in str1 so as to transform it into str2. It could be possible that the same character needs to be removed/deleted from one point of str1 and inserted to some another point.
+
+	Examples:	
+	Input : str1 = "heap", str2 = "pea" 
+	Output : Minimum Deletion = 2 and
+	         Minimum Insertion = 1
+	p and h deleted from heap
+	Then, p is inserted at the beginning
+	One thing to note, though p was required yet
+	it was removed/deleted first from its position and
+	then it is inserted to some other position.
+	Thus, p contributes one to the deletion_count
+	and one to the insertion_count.
+	
+	Input : str1 = "geeksforgeeks", str2 = "geeks"
+	Output : Minimum Deletion = 8
+	         Minimum Insertion = 0       
  */
-public class LongestCommonSubsequenceCount {
+public class MinNumOfInsertionDelToConvertString {
 	private static int[][] t;
 	public static void main(String[] args) {
-		String inputStr1 = "heap";
-		String inputStr2 = "pea";
-		//initMemoirzationArr(inputStr1,inputStr2);
-		//int len = lcmMemoization(inputStr1, inputStr2, inputStr1.length(), inputStr2.length());
-		//int len = lcmRecursive(inputStr1,inputStr2,inputStr1.length(),inputStr2.length());
-		int len = lcmOptimized(inputStr1, inputStr2);
-		System.out.println("Length of LCS is " + len);
+		String str1 = "sjfdsdjkff";
+		String str2 = "sdfkjh";
+		int count = lcmOptimized(str1, str2);
+		int deletion = str1.length() - count;
+		int insertion = str2.length() - count;
+		
+		System.out.println("Minimum Deletion = "+ deletion);
+		System.out.println("Minimum Insertion = "+ insertion);
 	}
 	
 	private static int lcmOptimized(String str1, String str2) {
@@ -58,9 +74,9 @@ public class LongestCommonSubsequenceCount {
 			return t[m][n];
 		}
 		if(str1.charAt(m-1) == str2.charAt(n-1)) {
-			return t[m][n] = 1+lcmMemoization(str1, str2, m-1, n-1);
+			return t[m][n] = 1+lcmRecursive(str1, str2, m-1, n-1);
 		}else {
-			return t[m][n] = Math.max(lcmMemoization(str1, str2, m, n-1), lcmMemoization(str1, str2, m-1, n));
+			return t[m][n] = Math.max(lcmRecursive(str1, str2, m, n-1), lcmRecursive(str1, str2, m-1, n));
 		}
 	}
 	
@@ -75,4 +91,3 @@ public class LongestCommonSubsequenceCount {
 		}
 	}
 }
-

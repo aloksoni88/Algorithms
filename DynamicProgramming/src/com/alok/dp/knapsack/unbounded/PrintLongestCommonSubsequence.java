@@ -6,8 +6,8 @@ package com.alok.dp.knapsack.unbounded;
 /**
  * @author Alok Soni
  *Question : Print Longest common subsequence
- * LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH”.
-   LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB”
+ * LCS for input Sequences "ABCDGH" and "AEDFHR" is "ADH".
+   LCS for input Sequences "AGGTAB" and "GXTXAYB" is "GTAB"
  */
 public class PrintLongestCommonSubsequence {
 	public static void main(String[] args) {
