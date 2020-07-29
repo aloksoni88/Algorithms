@@ -12,7 +12,7 @@ public class NthFibonacci {
 		int result = getNthFibonacci(6);
 		System.out.println("fibonacci no " + result);
 	}
-	
+
 //	private static int getNthFibonacci(int n) {
 //		if(n <=0) {
 //			return n;
@@ -21,17 +21,21 @@ public class NthFibonacci {
 //		}
 //		return getNthFibonacci(n-1) + getNthFibonacci(n-2);
 //	}
-	
-	private static int getNthFibonacci(int n){
+
+	private static int getNthFibonacci(int n) {
+		if(n==1){
+			return 0;
+		}
+		n = n-1;
 		int a = 0;
 		int b = 1;
-		int c = b+a;
-		while(n > 1){
-				c = a + b;
-				a = b;
-				b = c;
-				n--;
+		int c = b + a;
+		while (n > 1) {
+			c = a + b;
+			a = b;
+			b = c;
+			n--;
 		}
 		return c;
-}
+	}
 }
