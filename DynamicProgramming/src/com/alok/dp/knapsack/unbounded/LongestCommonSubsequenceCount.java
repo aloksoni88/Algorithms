@@ -12,12 +12,12 @@ package com.alok.dp.knapsack.unbounded;
 public class LongestCommonSubsequenceCount {
 	private static int[][] t;
 	public static void main(String[] args) {
-		String inputStr1 = "heap";
-		String inputStr2 = "pea";
+		String inputStr1 = "clement";
+		String inputStr2 = "antoine";
 		//initMemoirzationArr(inputStr1,inputStr2);
 		//int len = lcmMemoization(inputStr1, inputStr2, inputStr1.length(), inputStr2.length());
-		//int len = lcmRecursive(inputStr1,inputStr2,inputStr1.length(),inputStr2.length());
-		int len = lcmOptimized(inputStr1, inputStr2);
+		int len = lcmRecursive(inputStr1,inputStr2,inputStr1.length(),inputStr2.length());
+		//int len = lcmOptimized(inputStr1, inputStr2);
 		System.out.println("Length of LCS is " + len);
 	}
 	
