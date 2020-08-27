@@ -3,7 +3,6 @@
  */
 package com.alok.graph;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -43,6 +42,7 @@ public class TopologicalSorting {
 	}
 
 	private void topologicalSort() {
+		//display();
 		int[] indegree = new int[list.size()];
 		for(int i=0; i<list.size(); i++) {
 			ArrayList<Integer> innerList = list.get(i);
@@ -129,21 +129,16 @@ public class TopologicalSorting {
 	
 	
 	public static void main(String[] args) {
-		TopologicalSorting ts = new TopologicalSorting(7);
+		TopologicalSorting ts = new TopologicalSorting(4);
 		ts.addEdge(0, 1);
-		ts.addEdge(0, 5);
-		
-		ts.addEdge(1, 4);
-		ts.addEdge(1, 5);
+		ts.addEdge(0, 2);
 		
 		ts.addEdge(2, 1);
-		ts.addEdge(2, 3);
 		
 		ts.addEdge(3, 1);
-		ts.addEdge(3, 4);
+		ts.addEdge(3, 2);
 		
-		ts.addEdge(6, 5);
-		ts.addEdge(6, 4);
+		
 		
 		ts.display();
 		ts.topologicalSort();

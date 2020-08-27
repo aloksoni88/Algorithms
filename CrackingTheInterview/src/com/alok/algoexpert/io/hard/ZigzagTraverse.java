@@ -1,12 +1,9 @@
-/**
- * 
- */
 package com.alok.algoexpert.io.hard;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
-import jdk.javadoc.internal.doclets.formats.html.markup.Head;
 
 /**
  * @author Alok Soni

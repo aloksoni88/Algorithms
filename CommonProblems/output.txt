@@ -1,0 +1,5 @@
+ QA: 34
+ Product: 32
+ Engineering: 29
+ Testing: 23
+ Finance: 36

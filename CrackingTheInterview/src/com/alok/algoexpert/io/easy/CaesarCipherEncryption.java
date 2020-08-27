@@ -14,19 +14,20 @@ public class CaesarCipherEncryption {
 		String result = caesarCypherEncryptor(str, key);
 		System.out.println(result);
 	}
+
 	public static String caesarCypherEncryptor(String str, int key) {
-	    char[] c  = str.toCharArray();
+		char[] c = str.toCharArray();
 		String result = "";
-		key = key%26;
-		for(int i=0; i<c.length; i++){
-			if( (c[i] + key) > 122 ){
-					char value = (char)(96 + (c[i] - 122 + key));
-					result = result + value;
-			}else{
-					char value = (char) (c[i] + key);
-					result = result + value;
+		key = key % 26;
+		for (int i = 0; i < c.length; i++) {
+			if ((c[i] + key) > 122) {
+				char value = (char) (96 + (c[i] - 122 + key));
+				result = result + value;
+			} else {
+				char value = (char) (c[i] + key);
+				result = result + value;
 			}
 		}
-	    return result;
-	  }
+		return result;
+	}
 }

@@ -6,6 +6,7 @@
 
 /* Do not add a package declaration */
 import java.util.*;
+import java.util.stream.Collectors;
 import java.io.*;
 
 /* DO NOT CHANGE ANYTHING ABOVE THIS LINE */
@@ -33,6 +34,12 @@ public class LinesProcMap {
        Collections.sort(empList, (Employee emp1, Employee emp2) ->
        		emp2.getSalary().compareTo(emp1.getSalary()));
        
+//       empList = empList.stream().filter(salary1 -> salary1.getSalary() > 1600000.0).collect(Collectors.toList());
+//       System.out.println("==");
+//       System.out.println(empList);
+       
+       Collections.sort(empList);
+       System.out.println(empList);
        
        Map<String,Integer> retVal = new HashMap<String,Integer>();
        if(!empList.isEmpty()) {
@@ -64,7 +71,7 @@ public class LinesProcMap {
     }
 }
 
-class Employee{
+class Employee implements Comparable<Employee>{
 	private Integer id;
 	private String name;
 	private String dept;
@@ -125,9 +132,28 @@ class Employee{
 		this.salary = salary;
 	}
 	
+	@Override
+	public String toString() {
+		return id + ", " + name + ", " + dept + ", " + salary +"\n";
+	}
+	
 //	@Override
-//	public String toString() {
-//		return id + ", " + name + ", " + dept + ", " + salary +"\n";
+//	public int compareTo(Employee o) {
+//		return Comparator.comparing(Employee::getName)
+//	              .thenComparing(Employee::getDept)	
+//	              .thenComparing(Employee::getSalary)
+//	              .compare(this, o);
 //	}
+	
+	@Override
+	public int compareTo(Employee emp) {
+	    int i = name.compareTo(emp.name);
+	    if (i != 0) return i;
+
+	    i = dept.compareTo(emp.dept);
+	    if (i != 0) return i;
+
+	    return Float.compare(salary, emp.salary);
+	}
 	
 }

@@ -11,6 +11,7 @@ public class NthFibonacci {
 	public static void main(String[] args) {
 		int result = getNthFibonacci(6);
 		System.out.println("fibonacci no " + result);
+		
 	}
 
 //	private static int getNthFibonacci(int n) {

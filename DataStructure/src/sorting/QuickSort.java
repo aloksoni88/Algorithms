@@ -19,8 +19,8 @@ public class QuickSort {
 		//sortUsingRecurrsion(arr, 0, arr.length-1);	//sorting using recurresion
 		//sort2(arr, 0, arr.length-1);
 		//sort3(arr, 0, arr.length-1);
-		//sort4(arr, 0, arr.length-1);
-		quickSort(arr, 0, arr.length-1);
+		sort4(arr, 0, arr.length-1);
+		//quickSort(arr, 0, arr.length-1);
 		System.out.println("Array after sorting...");
 		for(int i : arr){
 			System.out.print(i + " ");

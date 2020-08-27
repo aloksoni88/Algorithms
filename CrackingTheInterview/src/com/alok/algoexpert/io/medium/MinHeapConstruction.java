@@ -4,7 +4,6 @@
 package com.alok.algoexpert.io.medium;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

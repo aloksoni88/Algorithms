@@ -1,6 +1,6 @@
 package com.garbagecollection;
 
-public class Example {
+class Example {
 	public static void main(String[] args) {
 		Test t1 = new Test();
 		Test t2 = new Test();
@@ -18,6 +18,7 @@ public class Example {
 		
 		System.out.println("t1.x:" + new Test().x + ", " + "t1.y:"+ new Test().y);
 	}
+	
 }
 
 class Test{
@@ -30,3 +31,4 @@ class Test{
 		return t;
 	}
 }
+
