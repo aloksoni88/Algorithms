@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class HeapSort {
 	public static void main(String[] args) {
-		int arr[] = {4, 10, 3, 5, 1, 9,7,15}; 
+		int arr[] = {-7, 2, 3, 8, -10, 4}; 
   
         sort(arr); 
   
@@ -26,8 +26,9 @@ public class HeapSort {
         int n = arr.length; 
   
         // Build heap (rearrange array) 
-        for (int i = n / 2 - 1; i >= 0; i--) 
-            heapify(arr, n, i); 
+        for (int i = n / 2 - 1; i >= 0; i--) {
+        	heapify(arr, n, i); 
+        }
   
         // One by one extract an element from heap 
         for (int i=n-1; i>=0; i--) 

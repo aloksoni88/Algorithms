@@ -8,7 +8,7 @@ public class QuickSort {
 	public static void main(String[] args){
 		//int[] arr = {48,29,8,59,72,88,42,65,95,19,62,68};
 		//int[] arr = {7,23,0,8,1,8,3,45,9,4,10};
-		int[] arr = {8,42,3,1,9,10,5,12,0};
+		int[] arr = {-7, 2, 3, 8, -10, 4, -6, -10, -2, -7, 10, 5, 2, 9, -9, -5, 3, 8};
 		System.out.println("Array without sorting..");
 		
 		for(int i : arr){
@@ -17,9 +17,9 @@ public class QuickSort {
 		System.out.println();
 		//sort(arr);	//sorting using loop
 		//sortUsingRecurrsion(arr, 0, arr.length-1);	//sorting using recurresion
-		//sort2(arr, 0, arr.length-1);
+		sort2(arr, 0, arr.length-1);
 		//sort3(arr, 0, arr.length-1);
-		sort4(arr, 0, arr.length-1);
+		//sort4(arr, 0, arr.length-1);
 		//quickSort(arr, 0, arr.length-1);
 		System.out.println("Array after sorting...");
 		for(int i : arr){
@@ -211,7 +211,7 @@ public class QuickSort {
 		}
 		boolean pivot_placed = false;
 		while(!pivot_placed){
-			while(arr[piv] < arr[right] && piv != right){
+			while(arr[piv] <= arr[right] && piv != right){
 				right = right -1;
 			}
 			if(piv == right){
@@ -224,7 +224,7 @@ public class QuickSort {
 				piv  = right;
 			}
 			
-			while(arr[piv] > arr[left] && left != piv){
+			while(arr[piv] >= arr[left] && left != piv){
 				left = left+1;
 			}
 			if(piv == left){
