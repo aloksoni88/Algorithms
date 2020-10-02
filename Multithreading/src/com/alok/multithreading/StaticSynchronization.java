@@ -19,7 +19,7 @@ class Table2 {
 		for (int i = 1; i <= 10; i++) {
 			System.out.println(n * i);
 			try {
-				Thread.sleep(400);
+				Thread.sleep(100);
 			} catch (Exception e) {
 			}
 		}

@@ -14,12 +14,15 @@ public class CountDownLatchDemo {
 		Worker second = new Worker(2000, latch, "WORKER-2");
 		Worker third = new Worker(3000, latch, "WORKER-3");
 		Worker fourth = new Worker(4000, latch, "WORKER-4");
+		Worker fifth = new Worker(5000, latch, "WORKER-5");
 		first.start();
 		second.start();
 		third.start();
 		fourth.start();
+		
 
 		// The main task waits for four threads
+		fifth.start();
 		latch.await();
 
 		// Main thread has started
@@ -43,7 +46,10 @@ class Worker extends Thread {
 	public void run() {
 		try {
 			Thread.sleep(delay);
-			latch.countDown();
+			if(latch != null) {
+				System.out.println("CountDownLatch count: "+ latch.getCount());
+				latch.countDown();
+			}
 			System.out.println(Thread.currentThread().getName() + " finished");
 		} catch (InterruptedException e) {
 			e.printStackTrace();

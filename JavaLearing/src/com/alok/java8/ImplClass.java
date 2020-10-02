@@ -16,8 +16,15 @@ public class ImplClass implements Interface1, Interface2{
 
 	@Override
 	public void log(String str) {
-		// TODO Auto-generated method stub
-		Interface2.super.log(str);
+		System.out.println(str);
+	}
+	
+
+	
+	public static void main(String[] args) {
+		ImplClass implClass = new ImplClass();
+		implClass.log("hi");
+		
 	}
 
 }
