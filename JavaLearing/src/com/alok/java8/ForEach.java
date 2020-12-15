@@ -3,6 +3,8 @@ package com.alok.java8;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 
 public class ForEach {
@@ -31,6 +33,7 @@ public class ForEach {
 		// traversing with Consumer interface implementation
 		MyConsumer action = new MyConsumer();
 		myList.forEach(action);
+		
 	}
 }
 

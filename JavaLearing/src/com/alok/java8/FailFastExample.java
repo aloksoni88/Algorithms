@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Consumer;
 
 public class FailFastExample {
@@ -23,7 +24,7 @@ public class FailFastExample {
 		});
 		System.out.println();
 		Iterator<Integer> it = list.iterator();
-		
+	
 		while(it.hasNext()) {
 			int value = it.next();
 			if(value == 3) {

@@ -14,10 +14,15 @@ public class ImmutableClassMain {
 		
 		System.out.println(ice.getName());
 		System.out.println(ice.getMap());
+		map.put(2, "ssdfkjsdlfj");
+		ice = ImmutableClassExample.createInstance("Alok", map);
+		
+		
 		
 		String s = ice.getMap().put(2, "salfjls");
 		System.out.println(ice.getName());
 		System.out.println(ice.getMap());
+		
 		
 	}
 }

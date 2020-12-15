@@ -8,6 +8,11 @@ package com.alok.algoexpert.io.easy;
  *
  */
 public class PalindromeCheck {
+	public static void main(String[] args) {
+		boolean isPal = isPalindrome("maanofnaam");
+		System.out.println(isPal);
+	}
+	
 	public static boolean isPalindrome(String str) {
 		if (str.length() == 1) {
 			return true;

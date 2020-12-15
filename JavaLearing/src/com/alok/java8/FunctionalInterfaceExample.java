@@ -8,6 +8,25 @@ interface Sayable2{
     
     String toString();
     
+    
+    default void test() {
+    	System.out.println("test");
+    }
+    
+    default void test2() {
+    	System.out.println("test2");
+    }
+  
+    
+    static void staticFunction() {
+    	System.out.println("static function");
+    }
+    
+    static void staticFunction2() {
+    	System.out.println("static function 2");
+    }
+    
+    
 } 
 
 
@@ -23,4 +42,5 @@ public class FunctionalInterfaceExample implements Sayable2{
     	FunctionalInterfaceExample fie = new FunctionalInterfaceExample();  
         fie.say("Hello there");  
     }
+    
 }

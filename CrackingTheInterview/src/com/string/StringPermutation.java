@@ -26,9 +26,9 @@ public class StringPermutation {
 		}
 		
 		for(int i=l; i<=r; i++) {
-			str = swap(str,i,l);
+			str = i != l ? swap(str,i,l): str;
 			permute(str, l+1, r, list);
-			str = swap(str,i,l);
+			str = i != l ? swap(str,i,l) : str;
 		}
 		return list;
 	}

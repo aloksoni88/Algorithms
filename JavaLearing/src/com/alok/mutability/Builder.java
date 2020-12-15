@@ -14,6 +14,8 @@ public class Builder {
 		ImmutableEmp employee1 = ImmutableEmp.EmpBuilder.anEmployee().withId(1).withName("Sachin")
 				.withDateOfBirth(new Date(1987, 2, 1)).withSalary(new BigDecimal(100000)).build();
 		employeeMap.put(employee1, "India");
+		
+		
 		for (Map.Entry<ImmutableEmp, String> employeeStringEntry : employeeMap.entrySet()) {
 			System.out.println(employeeStringEntry.getKey().hashCode());
 		}

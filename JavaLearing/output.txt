@@ -1,0 +1,8 @@
+22, Rajan Anand, Engineering, 1600000
+23, Swati Patil, Testing, 800000
+27, Vijay Chawda, Engineering, 800000
+29, Basant Mahapatra, Engineering, 600000
+32, Ajay Patel, Product, 3500000
+36, Ajay Mishra, Finance, 2500000
+36, Ajay Mishra, Finance, 4000000
+34, Swaraj Birla, QA, 350000

@@ -1,5 +1,5 @@
 
-public class TestChild2 extends Test2 {
+public class TestChild2 {
 	int k;
 	public static void main(String[] args) {
 		String  str1 = "Manish";

@@ -2,8 +2,8 @@ package com.string;
 
 public class OneEditAway {
 	public static void main(String[] args) {
-		String input1 = "";
-		String input2 = "";
+		String input1 = "Alok Soni";
+		String input2 = "lok";
 		checkString(input1,input2);
 	}
 	
