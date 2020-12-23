@@ -12,6 +12,11 @@ import java.util.List;
  *
  */
 public class BranchSum {
+	
+	public static void main(String[] args) {
+		BinaryTree tree = new BinaryTree(1);
+	}
+	
 	public static class BinaryTree {
 		int value;
 		BinaryTree left;
@@ -24,35 +29,26 @@ public class BranchSum {
 		}
 	}
 
-	public static List<Integer> branchSums(BinaryTree root) {
-		if (root == null) {
-			return null;	
-		}
-		List<Integer> list = new ArrayList<>();
-		if (root.left == null && root.right == null) {
-			list.add(root.value);
-			return list;
-		}
+	public static List<Integer> branchSums(BinaryTree root) {		
 		LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>();
-		map = getBranchSum(root, 0, map,root);
-		list = new ArrayList<Integer>(map.values());
+		getBranchSum(root, 0, map,root);
+		List<Integer> list = new ArrayList<Integer>(map.values());
 		return list;
 
 	}
 
-	private static LinkedHashMap<Integer, Integer> getBranchSum(BinaryTree root, int sum,
+	private static void getBranchSum(BinaryTree root, int sum,
 			LinkedHashMap<Integer, Integer> map, BinaryTree node) {
-		if (root == null) {
-			if (!map.containsKey(node.value) && node.left == null && node.right == null) {
-				map.put(node.value, sum);
-			}
-			sum = 0;
-			return map;
+		if (root == null) {			
+			return ;
 		}
-		sum = sum + root.value;
-		map = getBranchSum(root.left, sum, map, root);
-		map = getBranchSum(root.right, sum, map, root);
-		return map;
+		int newSum = sum + root.value;
+		if ( node.left == null && node.right == null) {
+				map.put(node.value, newSum);
+				return;
+		}
+		getBranchSum(root.left, newSum, map, root);
+		getBranchSum(root.right, newSum, map, root);		
 
 	}
 }

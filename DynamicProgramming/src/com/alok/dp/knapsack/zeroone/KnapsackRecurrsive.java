@@ -7,9 +7,9 @@ package com.alok.dp.knapsack.zeroone;
  */
 public class KnapsackRecurrsive {
 	public static void main(String[] args) {
-		int[] value = {60, 100, 120};
+		int[] value = {100, 60, 120};
 		int[] weight = {10, 20, 30};
-		int W = 50;
+		int W = 30;
 		int result = knapsackRecurrsive(value, weight, W, 3);
 		System.out.println(result);
 	}

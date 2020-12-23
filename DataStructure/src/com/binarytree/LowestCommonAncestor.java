@@ -7,13 +7,13 @@ public class LowestCommonAncestor {
 	
 	public static void main(String[] args) {
 		LowestCommonAncestor lca = new LowestCommonAncestor();
-        lca.node = new Node(1); 
-        lca.node.left = new Node(2); 
-        lca.node.right = new Node(3); 
+        lca.node = new Node(20); 
+        lca.node.left = new Node(8); 
+        lca.node.right = new Node(22); 
         lca.node.left.left = new Node(4); 
-        lca.node.left.right = new Node(5); 
-        lca.node.right.left = new Node(6); 
-        lca.node.right.right = new Node(7); 
+        lca.node.left.right = new Node(12); 
+        lca.node.left.right.left = new Node(10); 
+        lca.node.left.right.right = new Node(14);  
         
 //		lca.node = new Node(1);
 //		lca.node.left = new Node(2);
@@ -25,7 +25,7 @@ public class LowestCommonAncestor {
 //		lca.node.left.left.left = new Node(8);
 //		lca.node.left.left.right = new Node(9);
 		
-		int output = lca.findLCA(1,7);
+		int output = lca.findLCA(8,14);
 		System.out.println("Output : " + output);
 	}
 	
