@@ -29,8 +29,8 @@ public class MinNoStringDelToMakePanlindrome {
 	public static void main(String[] args) {
 		String str = "aebcbda";
 		String reverseStr = new StringBuffer(str).reverse().toString();
-		//int result = getCountRecursive(str, reverseStr, str.length(), reverseStr.length());
-		int result = getCountOptimized(str, reverseStr);
+		int result = getCountRecursive(str, reverseStr, str.length(), reverseStr.length());
+		//int result = getCountOptimized(str, reverseStr);
 		result = str.length() - result;
 		System.out.println("Min No of String To be deleted to make string palindrome is : " + result);
 	}

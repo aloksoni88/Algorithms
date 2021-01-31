@@ -43,6 +43,7 @@ public class MergeSort {
 						tmp[k++] = arr[j++];
 					}
 				}
+				//for any pair left so we have to just copy the elements
 				while(i<=h1){
 					tmp[k++] = arr[i++];
 				}

@@ -24,9 +24,22 @@ public class SuperClass {
 	protected int sameMethodDiffReturntype() throws SocketTimeoutException, IOException {
 		return -1;
 	}
+	
+	public void test() {
+		System.out.println("super class");
+	}
+	
+	public static void main(String[] args) {
+		SubClass s = new SubSubClass();
+		s.test();
+	}
 }
 
 class SubClass extends SuperClass{
+	
+	
+	
+	
 	public SubClass(){
 		this(10);
 		System.out.println("sub class no-arg constructor");
@@ -35,6 +48,10 @@ class SubClass extends SuperClass{
 	public SubClass(int a){
 		this("abc");
 		System.out.println("sub class int-arg constructor");
+	}
+	
+	public void test() throws RuntimeException {
+		System.out.println("sub classs");
 	}
 	
 	
@@ -53,4 +70,11 @@ class SubClass extends SuperClass{
 	protected int sameMethodDiffReturntype() throws IOException{
 		return 0;
 	}
+}
+
+class SubSubClass extends SubClass{
+	public void test() throws NullPointerException{
+		System.out.println("sub sub classs");
+	}
+	
 }

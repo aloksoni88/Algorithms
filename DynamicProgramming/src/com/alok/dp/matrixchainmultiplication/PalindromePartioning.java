@@ -37,6 +37,7 @@ public class PalindromePartioning {
 				t[i][j] = -1;
 			}
 		}
+		
 		//int cuts = palindromePartitionRecursive(str, 0, str.length()-1);
 		//int cuts = palindromePartitionMemoize(str, 0, str.length()-1);
 		int cuts = palindromePartitionOptimize(str, 0, str.length()-1);

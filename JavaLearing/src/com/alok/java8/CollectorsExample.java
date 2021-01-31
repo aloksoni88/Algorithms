@@ -1,7 +1,9 @@
 package com.alok.java8;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -17,6 +19,7 @@ public class CollectorsExample {
 		productsList.add(new Item(3, "Lenevo Laptop", 28000f));
 		productsList.add(new Item(4, "Sony Laptop", 28000f));
 		productsList.add(new Item(5, "Apple Laptop", 90000f));
+		
 		
 		// fetching price list
 		List<Float> productPriceList = productsList
@@ -67,5 +70,23 @@ public class CollectorsExample {
 				.stream()
 				.max((item1, item2)-> (item1.price > item2.price ? 1: -1)).get(); 
 		System.out.println("Max price product" + maxPrice);
+		
+		List<Float> price = productsList
+				.stream()
+				.sorted(Comparator.comparing(Item:: getName))
+				.map(item -> item.getPrice())
+				.collect(Collectors.toList());
+		System.out.println(price);
+
+		
+		
+		String[] strings = {"abc", "xyz", "", "lsj", "", "", "1223"};
+		ArrayList<String> strList = new ArrayList<>(Arrays.asList(strings));
+		
+		List<String> strListFiltered = strList
+			.stream()
+			.filter(str -> !str.isEmpty())
+			.collect(Collectors.toList());
+		System.out.println(strListFiltered);
 	}
 }

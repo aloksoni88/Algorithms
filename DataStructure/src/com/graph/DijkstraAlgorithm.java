@@ -32,7 +32,7 @@ public class DijkstraAlgorithm {
 		Graph.addEdge(graph, 7, 6, 5);
 		
 		Graph.printGraph(graph);
-		int shortestPath = findShortestPath(0, 5, graph);
+		int shortestPath = findShortestPath(0, 6, graph);
 		System.out.println("Shortest distance : " +  shortestPath);
 	}
 	
@@ -48,17 +48,10 @@ public class DijkstraAlgorithm {
 				node[i].distance = 0;
 				node[i].status = true;
 			}else{
-				node[i].predecessor = -1;
-				node[i].distance = Integer.MAX_VALUE;
-				node[i].status = false;
+				node[i] = new Node();				
 			}
 		}
-		int currentNode = source;
-		/*System.out.println("Node     " + "dist     "+ "pred     " + "status");
-		for(int i=0; i<graph.v; i++){
-			System.out.println(i + "         " + node[i].distance + "         " + node[i].predecessor + "         " + node[i].status);
-		}*/
-		
+		int currentNode = source;		
 		
 		while(currentNode != destination){
 			

@@ -41,6 +41,11 @@ public class FunctionalInterfaceExample implements Sayable2{
     public static void main(String[] args) {  
     	FunctionalInterfaceExample fie = new FunctionalInterfaceExample();  
         fie.say("Hello there");  
+        
+        Sayable2 obj = (msg) ->{
+        	System.out.println("calling functional interface directly");
+        };
+        obj.say("hello");
     }
     
 }
