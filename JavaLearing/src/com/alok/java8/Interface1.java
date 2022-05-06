@@ -7,7 +7,7 @@ public interface Interface1 {
 		System.out.println("I1 logging::" + str);
 	}
 	
-	default void sayHello() {
+	public default void sayHello() {
 		System.out.println("say hello");
 	}
 

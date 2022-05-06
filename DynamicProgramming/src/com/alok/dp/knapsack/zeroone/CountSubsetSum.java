@@ -6,11 +6,11 @@ package com.alok.dp.knapsack.zeroone;
  */
 public class CountSubsetSum {
 	public static void main(String[] args) {
-		int[] arr = {1, 2, 0, 3};
-		int sum = 1;
+		int[] arr = {1, 2, 6, 3};
+		int sum = 6;
 		int n = arr.length;
-		//int count = countSubsetSumRecursive(arr, sum, n);
-		int count = countSubsetSumTabulation(arr, sum, n);
+		int count = countSubsetSumRecursive(arr, sum, n);
+		//int count = countSubsetSumTabulation(arr, sum, n);
 		System.out.println(count);
 	}
 	

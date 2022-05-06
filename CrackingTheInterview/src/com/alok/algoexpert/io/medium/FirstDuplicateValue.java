@@ -13,8 +13,9 @@ import java.util.HashSet;
  */
 public class FirstDuplicateValue {
 	public static void main(String[] args) {
-		int[] array = {3, 1, 3, 1, 1, 4, 4};		
+		int[] array = {2,1,3,3,5,2,4};		
 		int result = firstDuplicateValue3(array);
+//		int result = firstDuplicate(array);
 		System.out.println(result);
 	}
 
@@ -50,6 +51,7 @@ public class FirstDuplicateValue {
 		return minIndex == Integer.MAX_VALUE ? -1 : array[minIndex];
 	}
 	
+	//{2,1,3,3,5,2,4};
 	// Time - O(n), Space - O(1) where n is the length of an array
 	public static int firstDuplicateValue3(int[] array) {
 		if (array == null || array.length == 0) {
@@ -57,11 +59,25 @@ public class FirstDuplicateValue {
 		}
 		for (int i = 0; i < array.length; i++) {
 			int index = Math.abs(array[i]);
-			if (array[index - 1] < 0) {
+			if (array[index] < 0) {
 				return index;
 			}
-			array[index - 1] = (-1) * array[index - 1];
+			array[index] = (-1) * array[index];
 		}
 		return -1;
+	}
+	
+	public static int firstDuplicate(int[] array) {
+		ArrayList<Integer> list = new ArrayList<>();
+		int minIndex = Integer.MAX_VALUE;
+		for(int i=0; i<array.length; i++){
+			if(list.contains(array[i])){
+				int currentIdx= i;
+				minIndex = minIndex > currentIdx ? currentIdx : minIndex; 
+			}else{
+				list.add(array[i]);
+			}
+		}
+		return minIndex == Integer.MAX_VALUE ? -1 : array[minIndex];
 	}
 }

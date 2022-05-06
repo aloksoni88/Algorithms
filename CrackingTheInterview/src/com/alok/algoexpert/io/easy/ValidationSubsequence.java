@@ -3,6 +3,8 @@
  */
 package com.alok.algoexpert.io.easy;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,7 +14,10 @@ import java.util.List;
 public class ValidationSubsequence {
 	
 	public static void main(String[] args) {
-		
+		ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(5, 1, 22, 25, 6, -1, 8, 10));
+		ArrayList<Integer> sequence = new ArrayList<Integer>(Arrays.asList(1, 6, -1, -1, 10));
+		boolean isSubsequence = isValid(array, sequence);
+		System.out.println(isSubsequence);
 	}
 
 	public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
@@ -34,5 +39,24 @@ public class ValidationSubsequence {
 		} else {
 			return false;
 		}
+	}
+	
+	private static boolean isValid(List<Integer> array, List<Integer> sequence) {
+		if(array == null || sequence == null) {
+			return false;
+		}
+		if(sequence.size() > array.size()) {
+			return false;
+		}
+		int j=0;
+		for(int i=0; i<array.size(); i++) {
+			if(array.get(i) == sequence.get(j)) {
+				j++;
+			}
+			if(j == sequence.size()) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

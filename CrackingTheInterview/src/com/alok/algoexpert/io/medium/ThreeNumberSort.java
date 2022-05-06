@@ -13,6 +13,7 @@ public class ThreeNumberSort {
 	public static void main(String[] args) {
 		int[] arr1 = { 0, 10, 10, 10, 10, 10, 25, 25, 25, 25, 25 };
 		int[] arr2 = { 25, 10, 0 };
+		System.out.println(Arrays.toString(arr1));
 		int[] result = threeNumberSort3(arr1, arr2);
 		System.out.println(Arrays.toString(result));
 	}

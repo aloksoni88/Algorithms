@@ -46,8 +46,10 @@ public class StackUsingLinkedList {
 			return;
 		}
 		System.out.println("Stack is:-");
-		while(head != null){
-			System.out.print(pop() + " ");
+		Node current = head;
+		while(current != null){
+			System.out.print(current.data + " ");
+			current = current.next;
 		}
 	}
 	
@@ -58,5 +60,20 @@ public class StackUsingLinkedList {
 		public Node(int data){
 			this.data = data;
 		}
+	}
+	
+	public static void main(String[] args) {
+		StackUsingLinkedList stack = new StackUsingLinkedList();
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		stack.push(4);
+		stack.push(5);
+		
+		stack.displayStack();
+		System.out.println(stack.peek());
+		
+		System.out.println("popped item-> " + stack.pop());
+		stack.displayStack();
 	}
 }

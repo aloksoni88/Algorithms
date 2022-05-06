@@ -1,7 +1,6 @@
 public abstract class AbstractClass {
-	public AbstractClass(int x) {
-		
-	}
+	public static final int X =0;
+
 	
 	abstract void test();
 	

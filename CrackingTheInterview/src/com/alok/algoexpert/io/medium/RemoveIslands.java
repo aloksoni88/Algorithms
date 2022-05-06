@@ -11,6 +11,13 @@ import java.util.Stack;
  * @author Alok Soni
  *
  */
+//[1, 0, 0, 0, 0, 0]
+//[0, 0, 0, 1, 1, 1]
+//[0, 0, 0, 0, 1, 0]
+//[1, 1, 0, 0, 1, 0]
+//[1, 0, 0, 0, 0, 0]
+//[1, 0, 0, 0, 0, 1]
+
 public class RemoveIslands {
 	public static void main(String[] args) {
 		int[][] input =
@@ -64,8 +71,8 @@ public class RemoveIslands {
 			int[] current = stack.pop();
 			int row = current[0];
 			int column = current[1];
-			matrix[row][column] = 2;
-			if(matrix[row][column] != 0 || matrix[row][column] != 2) {
+			
+			if(matrix[row][column] == 1) {
 				int[][] neighbours = getNeighbors(matrix, row, column);
 				for(int[] neighbour : neighbours) {
 					int r = neighbour[0];
@@ -76,6 +83,7 @@ public class RemoveIslands {
 					stack.push(neighbour);
 				}
 			}
+			matrix[row][column] = 2;
 		}
 	}
 	

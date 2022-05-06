@@ -11,8 +11,9 @@ import java.util.Arrays;
  */
 public class SubarraySort {
 	public static void main(String[] args) {
-		int[] arr = {-41, 8, 7, 12, 11, 9, -1, 3, 9, 16, -15, 51, 7};
-		//int[] result = subarraySort(arr);
+//		int[] arr = {-41, 8, 7, 12, 11, 9, -1, 3, 9, 16, -15, 51, 7};
+		int[] arr = {1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19};
+//		int[] result = subarraySort(arr);
 		int[] result = subarraySortOptimize(arr);
 		System.out.println(Arrays.toString(result));
 	}
@@ -29,6 +30,7 @@ public class SubarraySort {
 				}
 			}
 		}
+		System.out.println("Min:" + min + " & Max:" + max);
 		if(min == Integer.MAX_VALUE && max == Integer.MIN_VALUE) {
 			return new int[] {-1,-1};
 		}

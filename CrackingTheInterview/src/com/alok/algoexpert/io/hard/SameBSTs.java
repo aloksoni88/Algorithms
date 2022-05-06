@@ -48,8 +48,9 @@ public class SameBSTs {
 			return false;
 		}
 		int leftIndex1 = getLeftSubtree(index1, arrayOne, minVal);
-		int leftIndex2 = getLeftSubtree(index2, arrayTwo, minVal);
-		int rightIndex1 = getRightSubtree(index1, arrayOne, maxVal);				
+		int rightIndex1 = getRightSubtree(index1, arrayOne, maxVal);
+		
+		int leftIndex2 = getLeftSubtree(index2, arrayTwo, minVal);				
 		int rightIndex2 = getRightSubtree(index2, arrayTwo, maxVal);
 		
 		int currentVal = arrayOne.get(index1);

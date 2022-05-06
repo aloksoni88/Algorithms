@@ -27,7 +27,7 @@ package com.alok.dp.knapsack.unbounded;
  */
 public class MinNoOfInsertionToMakeStringPalindrome {
 	public static void main(String[] args) {
-		String str = "abcd";
+		String str = "aa";
 		String reverseStr = new StringBuffer(str).reverse().toString();
 		//int minNoOfInsertion = insertionCountRecursive(str, reverseStr, str.length(), str.length());
 		int minNoOfInsertion = insertionCountOptimized(str, reverseStr);

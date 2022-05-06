@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class ArrayOfProducts {
 	public static void main(String[] args) {
 		int[] arr = { 5, 1, 4, 2 };
-		int[] result = arrayOfProductsOptimized2(arr);
+		int[] result = arrayOfProductsOptimized(arr);
 		System.out.println(Arrays.toString(result));
 	}
 

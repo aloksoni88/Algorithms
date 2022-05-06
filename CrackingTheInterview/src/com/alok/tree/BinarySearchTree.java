@@ -250,9 +250,10 @@ public class BinarySearchTree {
 //			System.out.println("Item not found");	
 //		}
 ////		
-//		int deleteItem = 25;
-////		tree.removeRecursively(tree.root, deleteItem);
-//		tree.remove(25);
+		int deleteItem = 8;
+//		tree.removeRecursively(tree.root, deleteItem);
+		tree.remove(deleteItem);
+		System.out.println(tree);
 //		
 //		tree.inorder(tree.root);
 	}

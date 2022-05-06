@@ -40,31 +40,30 @@ public class PrintShortestCommonSupersequence {
 		}
 		
 		int i=str1.length(),j = str2.length();
-		String result = "";
+		StringBuffer result = new StringBuffer();
 		while(i > 0 && j > 0) {
 			if(str1.charAt(i-1) == str2.charAt(j-1)) {
-				result = result + str1.charAt(i-1);
+				result.append(str1.charAt(i-1));
 				i--;
 				j--;
 			}else if(t[i-1][j] > t[i][j-1]) {
-				result = result + str1.charAt(i-1);
+				result.append(str1.charAt(i-1));
 				i--;
 			}else {
-				result = result + str2.charAt(j-1);
+				result.append(str2.charAt(j-1));
 				j--;
 			}
 		}
 		
 		while(i > 0) {
-			result = result + str1.charAt(i-1);
+			result.append(str1.charAt(i-1));
 			i--;
 		}
 		
 		while(j > 0) {
-			result = result + str2.charAt(j-1);
+			result.append(str2.charAt(j-1));
 			j--;
 		}
-		
-		return new StringBuffer(result).reverse().toString();
+		return result.reverse().toString();
 	}
 }

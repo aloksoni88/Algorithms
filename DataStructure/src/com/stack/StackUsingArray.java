@@ -1,5 +1,7 @@
 package com.stack;
 
+import java.util.Stack;
+
 public class StackUsingArray {
 	final int MAX = 100;
 	int[] arr = new int[MAX];
@@ -43,5 +45,6 @@ public class StackUsingArray {
 		while(top > -1){
 			System.out.print(pop() + " ");
 		}
+	
 	}
 }

@@ -29,14 +29,14 @@ public class MapSort {
         unsortMap.entrySet()
             	.stream()
             	.sorted(Map.Entry.comparingByValue())
-            	.forEach(System.out::print);
+            	.forEach(System.out::println);
         
         
         Map<String, Integer> map = unsortMap.entrySet()
         	.stream()
         	.sorted(Map.Entry.comparingByValue())       	
         	.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry:: getValue,
-        			(item1, item2) -> item2, LinkedHashMap::new));
+        			(item1, item2) -> item1, LinkedHashMap::new));
         System.out.println(map);
         
 

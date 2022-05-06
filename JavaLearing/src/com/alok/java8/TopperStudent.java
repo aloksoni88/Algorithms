@@ -25,6 +25,8 @@ public class TopperStudent {
 										+ obj.getChemistry() + obj.getEnglish()))
 								.collect(Collectors.toList());
 		
+		
+		
 		int topper = -1;
 		int topperIdx = 0;
 		for(int i=0; i<marks.size(); i++) {

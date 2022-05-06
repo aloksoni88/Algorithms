@@ -9,9 +9,9 @@ package com.alok.algoexpert.io.medium;
  */
 public class MonotonicArray {
 	public static void main(String[] args) {
-		int[] array = { 1, -5, -10, -1100, -900, -1101, -1102, -9001 };
+		int[] array = { -1, 1, -10, -1100, -1100, -1101, -1102, -9001 };
 
-		boolean result = isMonotonic(array);
+		boolean result = isMonotonic2(array);
 		System.out.println(result);
 	}
 
@@ -38,4 +38,29 @@ public class MonotonicArray {
 		}
 		return true;
 	}
+	
+	private static boolean isMonotonic2(int[] arr){
+		boolean isDec = false;
+		boolean isInc = false;
+		
+		for(int i=0; i< arr.length-1; i++){
+			if(!isDec && !isInc){
+				if(arr[i] < arr[i+1]){
+					isInc = true;
+				}else if(arr[i] > arr[i+1]){
+					isDec = true;
+				}
+			}
+			else if(isDec && arr[i] >= arr[i+1]){
+				continue;
+			}
+			else if(isInc && arr[i] <= arr[i+1]){
+				continue;
+			}else {
+				return false;
+			}
+		}
+		return true;
+	}
+
 }

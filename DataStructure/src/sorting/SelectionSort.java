@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.Arrays;
+
 public class SelectionSort {
 	public static void main(String[] args){
 		int[] arr = {7,23,0,8,1,8,3,45,9,4,10};
@@ -9,8 +11,8 @@ public class SelectionSort {
 			System.out.print(i + " ");
 		}
 		System.out.println();
-		//sort(arr);	//sorting using loop
-		sortUsingRecurrsion(arr, 0);	//sorting using recurresion
+		sort(arr);	//sorting using loop
+		//sortUsingRecurrsion(arr, 0);	//sorting using recurresion
 		System.out.println("Array after sorting...");
 		for(int i : arr){
 			System.out.print(i + " ");
@@ -28,6 +30,7 @@ public class SelectionSort {
 			int tmp = arr[i];
 			arr[i] = arr[smallest];
 			arr[smallest] = tmp;
+			System.out.println("Pass: " + (i+1) + " " +  Arrays.toString(arr));
 		}
 	}
 	

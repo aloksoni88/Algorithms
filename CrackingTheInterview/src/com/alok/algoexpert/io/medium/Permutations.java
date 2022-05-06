@@ -4,6 +4,7 @@
 package com.alok.algoexpert.io.medium;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,8 +24,32 @@ public class Permutations {
 		
 		//int[] arr = {1,2,3};
 		//System.out.println(getPermutations(arr));
-		System.out.println(result.size());
-		System.out.println(result);
+//		System.out.println(result.size());
+//		System.out.println(result);
+//		
+		int[] arr = {1,2,3,4};
+		List<int[]> res = permute(arr, 0, arr.length-1, new ArrayList<int[]>());
+		System.out.println(res);
+		for(int i=0; i<res.size(); i++) {
+			System.out.print(Arrays.toString(res.get(i))+", ");	
+		}
+//		
+//		ArrayList<int[]> test = new ArrayList<int[]>();
+//		for(int i=0; i<4; i++) {
+//			if(i==0) {
+//				arr[i] = 10;
+//			}else if (i==1) {
+//				arr[i] = 20;
+//			}else if (i==2) {
+//				arr[i] = 30;
+//			}else if (i==3) {
+//				arr[i] = 40;
+//			}
+//			test.add(i,arr.clone());
+//		}
+//		for(int i=0; i<test.size(); i++) {
+//			System.out.print(Arrays.toString(test.get(i))+", ");	
+//		}
 	}
 
 	public static List<List<Integer>> getPermutations(List<Integer> array) {
@@ -70,5 +95,24 @@ public class Permutations {
 		list.set(r, tmp);
 		return list;
 	}
+	
+	private static ArrayList<int[]> permute(int[] arr, int left, int right, ArrayList<int[]> result){
+		if(left >= right) {
+			result.add(arr.clone());
+			return result;
+		}
+		for(int i=left; i<=right; i++) {
+			arr = i != left ? swap(i, left, arr) : arr;
+			permute(arr, left+1, right, result);
+			arr = i != left ? swap(i, left, arr): arr;
+		}
+		return result;
+	}
 
+	private static int[] swap(int a, int b, int[] arr) {
+		int tmp = arr[a];
+		arr[a] = arr[b];
+		arr[b] = tmp;
+		return arr;
+	}
 }

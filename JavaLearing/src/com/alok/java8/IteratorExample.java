@@ -9,13 +9,13 @@ public class IteratorExample {
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c", "d"));
 
-//	    for (Iterator<String> iter = list.iterator(); iter.hasNext(); ) {
-//	    	System.out.println(iter.next());
-//	        if (iter.next().equals("b")) {
-//	             iter.remove();    // #1
-//	             //list.remove("b"); // #2
-//	        }
-//	    }
+	    for (Iterator<String> iter = list.iterator(); iter.hasNext(); ) {
+	    	System.out.println(iter.next());
+	        if (iter.next().equals("b")) {
+	             iter.remove();    // #1
+	             //list.remove("b"); // #2
+	        }
+	    }
 	    
 	    
 	    //Iterator<String> it1 = list.iterator();

@@ -1,6 +1,6 @@
 package com.alok.java8;
 
-@FunctionalInterface 
+@FunctionalInterface
 interface Sayable2{  
     void say(String msg);  
     
@@ -46,6 +46,7 @@ public class FunctionalInterfaceExample implements Sayable2{
         	System.out.println("calling functional interface directly");
         };
         obj.say("hello");
+        
     }
     
 }

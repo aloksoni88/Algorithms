@@ -20,6 +20,7 @@ public class QueueUsingArray {
 		queue.display();
 		
 		queue.peek();
+	
 	}
 }
 
@@ -47,13 +48,12 @@ class CustomQueue{
 			System.out.println("Overflow");
 			return;
 		}
-		if(front == -1 && rear == -1){
+		if(isEmpty()){
 			front = rear = 0;
-			queue[rear] = data;
 		}else{
 			rear++;
-			queue[rear] = data;
 		}
+		queue[rear] = data;
 	}
 	
 	void deque(){
@@ -79,7 +79,8 @@ class CustomQueue{
 		while(tmp != rear){
 			System.out.print(queue[tmp++] + " ");
 		}
-		System.out.print(queue[rear]);
+		System.out.println(queue[rear]);
+		System.out.println("front = "+ front + " & rear = "+ rear);
 	}
 	
 	int peek(){

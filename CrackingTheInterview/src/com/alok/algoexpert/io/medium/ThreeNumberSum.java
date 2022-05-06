@@ -22,9 +22,10 @@ class ThreeNumberSum {
 //	[5, 6, 7]
 
 	public static void main(String[] args) {
-		int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 15};
-		int targetSum = 18;
-		List<Integer[]> list = threeNumberSumOptimize(array, targetSum);
+		//int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 15};
+		int[] array = {12,3,1,2,-6,5,-8,6};
+		int targetSum = 0;
+		List<Integer[]> list = threeNumberSumProblem(array, targetSum);
 		for(Integer[] a : list) {
 			System.out.println(Arrays.toString(a));
 		}
@@ -122,4 +123,28 @@ class ThreeNumberSum {
 		}
 		return result;
   }
+	
+	private static List<Integer[]> threeNumberSumProblem(int[] arr, int target){
+		Arrays.sort(arr);
+		List<Integer[]> result = new ArrayList<Integer[]>();
+		for(int i=0; i<arr.length; i++){
+			int left = i+1;
+			int right = arr.length -1;
+
+			while(left < right){
+				int sum = arr[i]  +arr[left] + arr[right];
+				if(sum == target){
+					result.add(new Integer[] { arr[i], arr[left], arr[right] });
+					left++;
+					right--;
+				}else if(sum > target){
+					right--;
+				}else{
+					left++;
+				}
+			}
+		}	
+		return result;
+	}
+
 }

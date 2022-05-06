@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.Arrays;
+
 public class BubbleSort {
 	
 	public static void main(String[] args){
@@ -12,7 +14,7 @@ public class BubbleSort {
 		System.out.println();
 		sort(arr);	//sorting using loop
 		//sortUsingRecurrsion(arr, arr.length);	//sorting using recurresion
-		System.out.println("Array 4after sorting...");
+		System.out.println("Array after sorting...");
 		for(int i : arr){
 			System.out.print(i + " ");
 		}
@@ -33,6 +35,7 @@ public class BubbleSort {
 						arr[j] = arr[j] - arr[j+1];
 					}
 				}
+				System.out.println("Pass: " + (i+1) + " " +  Arrays.toString(arr));
 			}
 		}
 	}

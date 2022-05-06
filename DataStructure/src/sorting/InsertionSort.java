@@ -1,5 +1,7 @@
 package sorting;
 
+import java.util.Arrays;
+
 public class InsertionSort {
 	public static void main(String[] args){
 		int[] arr = {7,23,0,8,1,8,3,45,9,4,10};
@@ -28,6 +30,7 @@ public class InsertionSort {
 					break;
 				}
 			}
+			System.out.println("Pass: " + i + " " +  Arrays.toString(arr));
 		}
 	}
 	

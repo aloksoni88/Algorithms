@@ -9,8 +9,10 @@ package com.alok.algoexpert.io.medium;
  */
 public class SingleCycleCheck {
 	public static void main(String[] args) {
-		int[] arr = { 10, 11, -6, -23, -2, 3, 88, 908, -26 };
-		boolean hasCycle = hasSingleCycle(arr);
+//		int[] arr = { 10, 11, -6, -23, -2, 3, 88, 908, -26 };
+		int[] arr = {1,3,-2,2,-1,3};
+//		boolean hasCycle = hasSingleCycle(arr);
+		boolean hasCycle = isSingleCyclic(arr);
 		System.out.println(hasCycle);
 	}
 
@@ -70,4 +72,35 @@ public class SingleCycleCheck {
 		}
 		return true;
 	}
+	
+	private static boolean isSingleCyclic(int[] arr){
+		boolean[] isVisited = new boolean[arr.length];
+		int index = 0;
+		isVisited[index] = true;
+		do{
+			index = (index + arr[index]) % arr.length;
+			if(index >= 0){
+				if(isVisited[index]){
+					break;
+				}
+				isVisited[index] = true;
+			}else{
+				index = arr.length + index;
+				if(isVisited[index]){
+					break;
+				}
+				isVisited[index] = true;
+			}
+		}while(index != 0);
+		if(index != 0) {
+			return false;
+		}
+		for(int i=0; i<arr.length; i++) {
+			if(!isVisited[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 }

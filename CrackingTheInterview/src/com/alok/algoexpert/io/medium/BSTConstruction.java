@@ -30,6 +30,7 @@ public class BSTConstruction {
 		bst = bst.remove(10);
 		bst.display();
 	}
+	
 
 	static class BST {
 		public int value;
@@ -98,8 +99,8 @@ public class BSTConstruction {
 			// Do not edit the return statement of this method.
 			if (left == null && right == null) {
 				return this;
-			}
-			return removeItem(this, value);
+			} 
+			return removeItem(this, value); 
 		}
 
 		private BST removeItem(BST node, int item) {

@@ -9,7 +9,21 @@ package com.alok.algoexpert.io.hard;
  */
 public class MergeLinkedList {
 	public static void main(String[] args) {
-
+			LinkedList list = new LinkedList(2);
+			list.next = new LinkedList(3);
+			list.next.next = new LinkedList(4);
+			list.next.next.next = new LinkedList(6);
+			
+			LinkedList list2 = new LinkedList(1);
+			list2.next = new LinkedList(5);
+			list2.next.next = new LinkedList(7);
+			
+			LinkedList mergedList = mergeLinkedListsInPlace(list, list2);
+			LinkedList current = mergedList;
+			while(current != null) {
+				System.out.print(current.value + "->");
+				current = current.next;
+			}
 	}
 
 	// This is an input class. Do not edit.

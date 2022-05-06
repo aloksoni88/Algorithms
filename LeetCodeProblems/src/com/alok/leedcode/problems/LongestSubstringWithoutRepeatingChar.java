@@ -3,17 +3,18 @@ package com.alok.leedcode.problems;
 public class LongestSubstringWithoutRepeatingChar {
 	private static int[][] t;
 	public static void main(String[] args) {
-		String str = "kjshefkjsfsfjksdkjfkjsdf";
+		String str = "lskflksanf";
 		t = new int[str.length()+1][str.length()+1];
 		for(int i=0; i<str.length()+1; i++) {
 			for(int j=0; j<str.length()+1; j++) {
 				t[i][j] = -1;
 			}
 		}
-		System.out.println(longestSubstringOptimize(str, str));
+//		System.out.println(longestSubstringOptimize(str, str));
 //		int result = longestSubstrign(str, str, 
 //				str.length(), str.length(), new StringBuffer(""));
 //		System.out.println("output : "+result);
+		System.out.println(longestSubStr(str));
 	}
 	
 	private static String res = "";
@@ -68,5 +69,26 @@ public class LongestSubstringWithoutRepeatingChar {
 			}
 		}
 		return t[s.length()][s.length()];
+	}
+	
+	private static int longestSubStr(String str) {
+		//geeksforgeeks
+		if(str == null || str.isEmpty()) {
+			return -1;
+		}
+		int count = 0;
+		for(int i=0; i<str.length(); i++) {
+			boolean[] visited = new boolean[256];
+			
+			for(int j=i; j< str.length(); j++) {
+				if(visited[str.charAt(j)]) {
+					break;
+				}else {
+					count = Integer.max(count, j-i+1);	
+					visited[str.charAt(j)] = true;
+				}
+			}
+		}
+		return count;
 	}
 }

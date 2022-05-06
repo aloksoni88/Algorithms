@@ -29,6 +29,9 @@ public class ForEach {
 			}
 
 		});
+		
+		myList.forEach(t -> System.out.println("value : " + t));
+		
 
 		// traversing with Consumer interface implementation
 		MyConsumer action = new MyConsumer();

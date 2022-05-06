@@ -80,7 +80,8 @@ public class Employee {
 	    employee2.setDateOfBirth(new Date(1987,2,1));    
 	    employee2.setSalary(new BigDecimal(100000));  
 	    // Here we wanted to update the same Employee to Japan
-	    employeeMap.put(employee2,"Japan");    
+	    employeeMap.put(employee2,"Japan");
+	    System.out.println(employeeMap.size());
 	    System.out.println(employeeMap); 
 	    // Output of this will be 2 as below
 	    /* 
@@ -89,23 +90,23 @@ public class Employee {
 	    */
 	}
 	
-//	@Override    
-//    public boolean equals(Object o) {        
-//        if (this == o) return true;        
-//        if (o == null || getClass() != o.getClass()) return false;        
-//        Employee employee = (Employee) o;        
-//        if (id != employee.id) return false;        
-//        if (name != null ? !name.equals(employee.name) : employee.name != null) return false;        
-//        if (dateOfBirth != null ? !dateOfBirth.equals(employee.dateOfBirth) : employee.dateOfBirth != null) return false;        
-//        return salary != null ? salary.equals(employee.salary) : employee.salary == null;    
-//    }    
-//    @Override    
-//    public int hashCode() {        
-//        int result = (int) (id ^ (id >>> 32));        
-//        result = 31 * result + (name != null ? name.hashCode() : 0);        
-//        result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
-//        result = 31 * result + (salary != null ? salary.hashCode() : 0);
-//        return result;    
-//    } 
+	@Override    
+    public boolean equals(Object o) {        
+        if (this == o) return true;        
+        if (o == null || getClass() != o.getClass()) return false;        
+        Employee employee = (Employee) o;        
+        if (id != employee.id) return false;        
+        if (name != null ? !name.equals(employee.name) : employee.name != null) return false;        
+        if (dateOfBirth != null ? !dateOfBirth.equals(employee.dateOfBirth) : employee.dateOfBirth != null) return false;        
+        return salary != null ? salary.equals(employee.salary) : employee.salary == null;    
+    }    
+    @Override    
+    public int hashCode() {        
+        int result = (int) (id ^ (id >>> 32));        
+        result = 31 * result + (name != null ? name.hashCode() : 0);        
+        result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
+        result = 31 * result + (salary != null ? salary.hashCode() : 0);
+        return result;    
+    } 
     
 }

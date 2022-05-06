@@ -21,12 +21,23 @@ public class MinHeapConstruction {
 			list.add(arr[i]);
 		}
 		MinHeap minHeap = new MinHeap(list);
+//		MinHeap minHeap = new MinHeap();
+//		
+//		for(int i=0; i< arr.length; i++) {
+//			minHeap.insert(arr[i]);
+//		}
+		System.out.println(minHeap.heap);
+		System.out.println(minHeap.remove());
 		System.out.println(minHeap.heap);
 
 	}
 
 	static class MinHeap {
 		List<Integer> heap = new ArrayList<Integer>();
+		
+		public MinHeap() {
+			
+		}
 
 		public MinHeap(List<Integer> array) {
 			heap = buildHeap(array);

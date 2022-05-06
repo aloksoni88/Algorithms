@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  * @author Alok Soni
@@ -34,7 +35,13 @@ public class FourNumberSum {
 				map.put(sum, new Integer[]{i,j});
 			}
 		}
-		
+		for(Map.Entry<Integer, Integer[]> entry: map.entrySet()) {
+			System.out.print(entry.getKey() + ": " + Arrays.toString(entry.getValue()) + ", ");
+		}
+		System.out.println();
+//	    map.keySet().forEach(key -> System.out.print(key+", "));
+//	    System.out.println();
+//		map.values().forEach( val -> System.out.print(Arrays.toString(val)));
 		for(int i=0; i<arr.length-1; i++) {
 			for(int j=i+1; j<arr.length; j++) {
 				int sum = arr[i] + arr[j];
@@ -60,6 +67,7 @@ public class FourNumberSum {
 		return result;
 	}
 	
+	//Time - O(n^2 * n) - n^3, Space- O(n)
 	private static List<Integer[]> fourNumberSum(int[] arr, int targetSum){
 		Arrays.sort(arr);
 		List<Integer[]> result = new ArrayList<>();

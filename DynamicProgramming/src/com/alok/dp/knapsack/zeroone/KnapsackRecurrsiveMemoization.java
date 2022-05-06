@@ -34,9 +34,9 @@ public class KnapsackRecurrsiveMemoization {
 		else if(weight[n-1] <= W) {
 			return t[n][W] = Integer.max(value[n-1] + knapsackRecurrsiveMemoization(value, weight, W-weight[n-1], n-1),
 					knapsackRecurrsiveMemoization(value, weight, W, n-1));
-		}else if(weight[n-1] > W) {
+		}else {// if(weight[n-1] > W) {
 			return t[n][W] = knapsackRecurrsiveMemoization(value, weight, W, n-1);
 		}
-		return 0;
+		//return 0;
 	}
 }

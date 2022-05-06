@@ -27,9 +27,11 @@ public class ImplClass implements Interface1, Interface2{
 		//Interface1.super.log(str);
 	}
 
+	String str;
 	public static void main(String[] args) {
 		ImplClass implClass = new ImplClass();
 		implClass.log("hi");
+		
 		
 		ArrayList<Integer> list = new ArrayList<>();
 		list.add(1);
@@ -37,6 +39,7 @@ public class ImplClass implements Interface1, Interface2{
 		list.add(3);
 		list.add(4);
 		list.add(5);
+		
 		
 		list.forEach(new Consumer<Integer>() {
 
@@ -47,6 +50,10 @@ public class ImplClass implements Interface1, Interface2{
 			}
 			
 		});
+		
+			System.out.println("===========");
+			int i=0;
+			System.out.println(i++);
 	}
 
 }

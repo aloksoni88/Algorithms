@@ -10,10 +10,10 @@ package com.alok.dp.knapsack.unbounded;
 public class MinNumberCoinChange {
 
 	public static void main(String[] args) {
-		int[] coins = {2,4};
+		int[] coins = {1,2,3,4};
 		int total = 7;
-		//int noOfWays = minNumCoinRecursive(coins, total, coins.length);
-		int noOfWays = minNumCoinTabulation(coins,total,coins.length);
+		int noOfWays = minNumCoinRecursive(coins, total, coins.length);
+//		int noOfWays = minNumCoinTabulation(coins,total,coins.length);
 		if(noOfWays == Integer.MAX_VALUE-1) {
 			System.out.println(-1);
 		}else {

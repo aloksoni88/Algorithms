@@ -10,7 +10,7 @@ public class KnapsackRecurrsive {
 		int[] value = {100, 60, 120};
 		int[] weight = {10, 20, 30};
 		int W = 30;
-		int result = knapsackRecurrsive(value, weight, W, 3);
+		int result = knapsackRecurrsive(value, weight, W, weight.length);
 		System.out.println(result);
 	}
 	

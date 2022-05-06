@@ -1,6 +1,14 @@
 package com.alok.algoexpert.io.medium;
 
 public class MaxSubsetSumNoAdjacent {
+	public static void main(String[] args) {
+		int[] arr= {105, 75, 120, 75,90,135};
+		//output = 330, 75+120+135
+		
+		int result = maxSubsetSumNoAdjacent(arr);
+		System.out.println(result);
+	}
+	
 	public static int maxSubsetSumNoAdjacent(int[] array) {
 		if (array == null || array.length == 0) {
 			return 0;
@@ -21,5 +29,11 @@ public class MaxSubsetSumNoAdjacent {
 			}
 			return second;
 		}
+		//first = 105
+		//second = 105
+		//i=2, current = 225, first = 105, second = 225
+		//i=3, current = 180, first = 225, second = 225
+		//i=4, current = 315, first = 225, second = 315
+		//i=5, current = 360, first = 315, second = 360
 	}
 }

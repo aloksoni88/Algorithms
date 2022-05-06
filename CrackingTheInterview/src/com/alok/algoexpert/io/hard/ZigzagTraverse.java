@@ -11,9 +11,12 @@ import java.util.List;
  */
 public class ZigzagTraverse {
 	public static void main(String[] args) {
-		// int[][] arr = {{1, 3, 4, 10}, {2, 5, 9, 11}, {6, 8, 12, 15}, {7, 13, 14,
-		// 16}};
-		int[][] arr = { { 1 }, { 2 }, { 3 }, { 4 }, { 5 } };
+		 int[][] arr = {	{1, 3, 4, 10}, 
+				 			{2, 5, 9, 11}, 
+				 			{6, 8, 12, 15}, 
+				 			{7, 13, 14,16}
+				 		};
+//		int[][] arr = { { 1 }, { 2 }, { 3 }, { 4 }, { 5 } };
 		List<List<Integer>> list = new ArrayList<>();
 
 		for (int i = 0; i < arr.length; i++) {

@@ -10,7 +10,7 @@ package com.alok.algoexpert.io.hard;
 public class ShiftedBinarySearch {
 	public static void main(String[] args) {
 		int[] arr = {45, 61, 71, 72, 73, 0, 1, 21, 33, 37};
-		int target = 33;
+		int target = 1;
 		int result = shiftedBinarySearch(arr, target);
 		System.out.println(result);
 	}

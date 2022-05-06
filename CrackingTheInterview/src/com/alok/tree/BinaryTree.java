@@ -49,9 +49,8 @@ public class BinaryTree {
 				if(current.right == null) {
 					current.right = node;
 					break;
-				}else {
-					queue.add(current.right);
 				}
+				queue.add(current.right);
 			}
 		}
 		size++;

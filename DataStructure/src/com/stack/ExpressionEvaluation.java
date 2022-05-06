@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class ExpressionEvaluation {
 	public static void main(String[] args) {
-		String exp = "100 * ( 2 + 11 ) / 14 ";
+		String exp = "100 * ( 2 + 26 * 2 ) / 14 ";
 		System.out.println("Result is : " + result(exp));
 		
 		//tokens = 1,0, ,+, ,2, ,*

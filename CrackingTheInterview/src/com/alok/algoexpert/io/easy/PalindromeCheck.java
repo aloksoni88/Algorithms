@@ -9,7 +9,7 @@ package com.alok.algoexpert.io.easy;
  */
 public class PalindromeCheck {
 	public static void main(String[] args) {
-		boolean isPal = isPalindrome("maanofnaam");
+		boolean isPal = isPalindrome("maananaam");
 		System.out.println(isPal);
 	}
 	
@@ -30,4 +30,23 @@ public class PalindromeCheck {
 		}
 		return false;
 	}
+	
+	
+	public static boolean isPalindrome2(String str){
+		if(str == null || str.isEmpty()){
+			return false;
+		}else if(str.length() == 1){
+			return true;
+		}
+		for(int i=0; i< str.length()/2; i++){
+			char reverseChar = str.charAt(str.length()-i-1);
+			char currentChar = str.charAt(i);
+			if(reverseChar != currentChar){
+				return false;
+			}
+		}
+		return true;
+		
+	}
+
 }

@@ -11,9 +11,9 @@ public class MergeSort {
 		}
 		System.out.println();
 		//sort2(arr);	//sorting using loop
-		//sortUsingRecurrsion(arr, 0,arr.length-1);	//sorting using recurresion
+		sortUsingRecurrsion(arr, 0,arr.length-1);	//sorting using recurresion
 		//mergeSort(arr);
-		mergeSort2(arr);
+		//mergeSort2(arr);
 		System.out.println("Array after sorting...");
 		for(int i : arr){
 			System.out.print(i + " ");
