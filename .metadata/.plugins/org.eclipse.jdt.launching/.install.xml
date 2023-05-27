@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
-<entry loc="C:\Program Files\Java\jre1.8.0_60" stamp="1445073052745"/>
+    <entry loc="/snap/eclipse/66/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.5.v20221102-0933" stamp="1670528805000"/>
+    <entry loc="/snap/eclipse/66/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.5.v20221102-0933/jre" stamp="1670528805000"/>
+    <entry loc="C:\Program Files\Java\jre1.8.0_60" stamp="1445073052745"/>
 </dirs>
