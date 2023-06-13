@@ -6,7 +6,7 @@ public class Reflection {
 
 	public static void main(String args[]) throws Exception {
 		// Creating object whose property is to be checked
-		Test obj = new Test();
+		Test2 obj = new Test2();
 
 		// Creating class object from the object using
 		// getclass method

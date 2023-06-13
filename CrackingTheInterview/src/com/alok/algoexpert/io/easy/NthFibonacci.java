@@ -9,7 +9,7 @@ package com.alok.algoexpert.io.easy;
  */
 public class NthFibonacci {
 	public static void main(String[] args) {
-		int result = getNthFibonacci(8);
+		int result = getNthFibonacci2(8);
 		System.out.println("fibonacci no " + result);
 		//0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610
 	}
