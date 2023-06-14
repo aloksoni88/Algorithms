@@ -9,11 +9,12 @@ package com.alok.algoexpert.io.medium;
  */
 public class LevenshteinDistance {
 	public static void main(String[] args) {
-		String str1 = "abed";
-		String str2 = "yabd";
+		String str1 = "kjhkjh";
+		String str2 = "jkjhkjhk";
 		int result = levenshteinDistance(str1, str2);
 		System.out.println(result);
 	}
+	
 	
 	public static int levenshteinDistance(String str1, String str2) {
 	    if(str1 == null && str2 == null){

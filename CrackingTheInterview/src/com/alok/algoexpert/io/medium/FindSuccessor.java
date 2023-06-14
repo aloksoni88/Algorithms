@@ -15,14 +15,19 @@ public class FindSuccessor {
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree(1);
 		tree.left = new BinaryTree(2);
+		tree.left.parent = tree;
 		tree.right = new BinaryTree(3);
+		tree.right.parent = tree;
 		tree.left.left = new BinaryTree(4);
+		tree.left.left.parent = tree.left;
 		tree.left.right = new BinaryTree(5);
+		tree.left.right.parent = tree.left;
 		tree.left.left.left = new BinaryTree(6);
+		tree.left.left.left.parent = tree.left.left;
 		
-		BinaryTree node = tree.left.right;
+		BinaryTree node = tree.right;
 		BinaryTree successor = findSuccessor2(tree, node);
-		System.out.println(successor.value);
+		System.out.println(successor != null ? successor.value : null);
 	}
 
 	// Time - O(n) Space - O(h) 
@@ -70,11 +75,11 @@ public class FindSuccessor {
 	}
 	
 	private static BinaryTree getSuccessorUsingParent(BinaryTree node) {
-		BinaryTree currentNode = node;
-		while(currentNode.parent != null && currentNode.parent.right == currentNode) {
-			currentNode = currentNode.parent;
+		BinaryTree parent = node.parent;
+		while(parent != null && parent.right == node) {
+			parent = parent.parent;
 		}
-		return currentNode.parent;
+		return parent;
 	}
 	
 	

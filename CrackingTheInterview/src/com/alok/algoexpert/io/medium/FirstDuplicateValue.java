@@ -13,9 +13,10 @@ import java.util.HashSet;
  */
 public class FirstDuplicateValue {
 	public static void main(String[] args) {
-		int[] array = {2,1,3,3,5,2,4};		
-		int result = firstDuplicateValue3(array);
+		int[] array = {6, 10, 5, 4, 9, 120, 4, 6, 10};		
+		//int result = firstDuplicateValue3(array);
 //		int result = firstDuplicate(array);
+		int result = findFirstDuplicate(array);
 		System.out.println(result);
 	}
 
@@ -79,5 +80,22 @@ public class FirstDuplicateValue {
 			}
 		}
 		return minIndex == Integer.MAX_VALUE ? -1 : array[minIndex];
+	}
+	
+	public static int findFirstDuplicate(int[] arr) {
+		if (arr == null) {
+			return -1;
+		}
+		ArrayList<Integer> list = new ArrayList<>();
+		int minIndex = arr.length-1;
+		for (int i=0; i< arr.length; i++) {
+			if (list.contains(arr[i])) {
+				int index = list.indexOf(arr[i]);
+				minIndex = minIndex > index ? index : minIndex;
+			} else {
+				list.add(arr[i]);
+			}
+		}
+		return arr[minIndex];
 	}
 }

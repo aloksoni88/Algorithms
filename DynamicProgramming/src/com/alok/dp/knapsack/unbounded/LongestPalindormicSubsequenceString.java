@@ -17,12 +17,12 @@ package com.alok.dp.knapsack.unbounded;
  * palindromic subsequences of the given sequence, but not the longest ones.
  *
  */
-public class LongestPalindormicSubsequence {
+public class LongestPalindormicSubsequenceString {
 	public static void main(String[] args) {
-		String str = "abaxyzzyxf";
+		String str = "abcbdbcdbbababdddb";
 		String reverseStr = new StringBuffer(str).reverse().toString();
-		//int result = longestPalindromicSubsequenceRecursive(str, reverseStr, str.length(), reverseStr.length());
-		int result = lPSOptimized(str, reverseStr);
+		String result = longestPalindromicSubsequenceRecursive(str, reverseStr, str.length(), reverseStr.length());
+//		String result = lPSOptimized(str, reverseStr);
 		System.out.println("Longest palindromic subsequence is = "+ result);
 	}
 	
@@ -42,14 +42,15 @@ public class LongestPalindormicSubsequence {
 		return t[str1.length()][str2.length()];
 	}
 	
-	private static int longestPalindromicSubsequenceRecursive(String str1, String str2, int m, int n) {
+	private static String longestPalindromicSubsequenceRecursive(String str1, String str2, int m, int n) {
 		if(m == 0 || n ==0) {
-			return 0;
+			return "";
 		}else if(str1.charAt(m-1) == str2.charAt(n-1)) {
-			return 1+ longestPalindromicSubsequenceRecursive(str1, str2, m-1, n-1);
+			return str1.charAt(m-1)+ longestPalindromicSubsequenceRecursive(str1, str2, m-1, n-1);
 		}else {
-			return Integer.max(longestPalindromicSubsequenceRecursive(str1, str2, m, n-1), 
-					longestPalindromicSubsequenceRecursive(str1, str2, m-1, n));
+			String pal1 = longestPalindromicSubsequenceRecursive(str1, str2, m, n-1);
+			String pal2 = longestPalindromicSubsequenceRecursive(str1, str2, m-1, n);
+			return pal1.length() > pal2.length() ? pal1 : pal2;
 		}
 	}
 }

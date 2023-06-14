@@ -82,7 +82,8 @@ public class MyLinkedList {
 		else {
 			Node current = first;
 			int currentIndex = 1;
-			while(current != null && index != currentIndex) {
+
+			uuuuuwhile(current != null && index != currentIndex) {
 				current = current.next;
 				currentIndex++;
 			}

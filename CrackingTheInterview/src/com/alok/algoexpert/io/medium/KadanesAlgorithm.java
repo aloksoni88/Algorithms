@@ -8,6 +8,12 @@ package com.alok.algoexpert.io.medium;
  *
  */
 public class KadanesAlgorithm {
+	
+	public static void main(String[] args) {
+		int[] arr = {3, 5, -9, 1, 3, -2, -3, 4, 7, 2, -9, 6, 3, 1, -5, 4};
+		System.out.println(maxSum(arr));
+	}
+	
 	public static int kadanesAlgorithm(int[] array) {
 		int sum = findMaxSum(array);
 		return sum;
@@ -22,6 +28,21 @@ public class KadanesAlgorithm {
 			prevSum = val;
 			if (val > max) {
 				max = val;
+			}
+		}
+		return max;
+	}
+	
+	private static int maxSum(int[] arr) {
+		int max = Integer.MIN_VALUE;
+		int sum = 0;
+		for (int i=0; i< arr.length; i++) {
+			sum = sum + arr[i];
+			if (max < sum) {
+				max = sum;
+			}
+			if (sum < arr[i]) {
+				sum = arr[i];
 			}
 		}
 		return max;

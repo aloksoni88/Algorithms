@@ -9,7 +9,7 @@ package com.alok.algoexpert.io.medium;
  */
 public class LongestPalindromicSubstring {
 	public static void main(String[] args) {
-		String str = "abaxyzzyxf";
+		String str = "abcbdbcdbbababdddb";
 		//System.out.println(longestPalindromicSubstring(str));
 		System.out.println(lpsOptimized(str));
 	}

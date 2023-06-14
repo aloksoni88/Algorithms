@@ -1,5 +1,8 @@
 bin
+*.metadata
 .metadata
+.metadata/
+**/metadata/
 .settings
 .DS_Store
 *.xml

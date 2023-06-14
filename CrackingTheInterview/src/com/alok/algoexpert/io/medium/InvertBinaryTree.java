@@ -1,7 +1,9 @@
 package com.alok.algoexpert.io.medium;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class InvertBinaryTree {
 	public static void invertBinaryTree(BinaryTree tree) {
@@ -39,6 +41,28 @@ public class InvertBinaryTree {
 			}
 			if(current.right != null) {
 				queue.add(current.right);
+			}
+		}
+	}
+	
+	private static void mirrorTreeUsingStack(BinaryTree tree) {
+		if(tree == null) {
+			return;
+		}
+		Stack<BinaryTree> stack = new Stack<>();
+		stack.add(tree);
+		while(!stack.isEmpty()) {
+			BinaryTree current = stack.pop();
+			
+			BinaryTree tmp = current.left;
+			current.left = current.right;
+			current.right = tmp;
+			
+			if(current.left != null) {
+				stack.add(current.left);
+			}
+			if(current.right != null) {
+				stack.add(current.right);
 			}
 		}
 	}
@@ -91,7 +115,8 @@ public class InvertBinaryTree {
 		System.out.println();
 		System.out.println("Invert Binary tree");
 //		invertBinaryTree(binaryTree.root);
-		mirrorTree(binaryTree.root);
+//		mirrorTree(binaryTree.root);
+		mirrorTreeUsingStack(binaryTree.root);
 		System.out.println();
 		System.out.println(binaryTree);
 //		levelOrderTraversal(binaryTree);
