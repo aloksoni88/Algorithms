@@ -9,9 +9,10 @@ package com.alok.dp.knapsack.unbounded;
  */
 public class LongestPalindromSubstringPrint {
 	public static void main(String[] args) {
-		String str = "abcbdbcdbbabcabbdddb";
+		String str = "babaca";
 		String str2 = new StringBuffer(str).reverse().toString();
 		String result = longestPalindromSubstring(str, str2, str.length(), str2.length(), "");
+//		String result = longestPanlindromSubstringOptimize(str, str2);
 		System.out.println("Longest Palindrom substring : " + result);
 	}
 	
