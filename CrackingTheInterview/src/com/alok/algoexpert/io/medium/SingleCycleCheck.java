@@ -11,6 +11,7 @@ public class SingleCycleCheck {
 	public static void main(String[] args) {
 //		int[] arr = { 10, 11, -6, -23, -2, 3, 88, 908, -26 };
 		int[] arr = {1,3,-2,2,-1,3};
+		//int[] arr = {1,1,0,1,1};
 //		boolean hasCycle = hasSingleCycle(arr);
 		boolean hasCycle = isSingleCyclic(arr);
 		System.out.println(hasCycle);

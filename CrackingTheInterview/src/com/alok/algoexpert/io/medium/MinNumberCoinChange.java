@@ -3,17 +3,25 @@
  */
 package com.alok.algoexpert.io.medium;
 
+import java.util.Arrays;
+
 /**
  * @author Alok Soni
  *
  */
 public class MinNumberCoinChange {
 
+
 	public static void main(String[] args) {
-		int[] coins = {2,4};
-		int total = 7;
-		//int noOfWays = minNumCoinRecursive(coins, total, coins.length);
-		int noOfWays = minNumCoinTabulation(coins,total,coins.length);
+		int[] coins = {1, 2, 10};
+		int total = 100;
+		int noOfWays = minNumCoinRecursive(coins, total, coins.length);
+//		int noOfWays = minNumCoinTabulation(coins,total,coins.length);
+		
+		int t[] = new int[coins.length+1];
+		Arrays.fill(t, -1);
+//		int noOfWays = minNumCoinMemoization(coins,total,coins.length, t);
+	
 		if(noOfWays == Integer.MAX_VALUE-1) {
 			System.out.println(-1);
 		}else {
@@ -28,11 +36,33 @@ public class MinNumberCoinChange {
 			return Integer.MAX_VALUE-1;
 		}
 		if(coins[n-1] <= total) {
-			return Math.min(minNumCoinRecursive(coins, total-coins[n-1], n)+1,minNumCoinRecursive(coins, total, n-1));
+			return 1 + Math.min(minNumCoinRecursive(coins, total-coins[n-1], n),minNumCoinRecursive(coins, total, n-1));
 		}else {
 			return minNumCoinRecursive(coins, total, n-1);
 		}
 	}
+	
+	private static int minNumCoinMemoization(int[] coins, int total, int n, int[] t) {
+		if(total == 0) {
+			return 0;
+		}else if(n == 0 && total != 0) {
+			return Integer.MAX_VALUE-1;
+		}
+		if (t[n] != -1) {
+			return t[n];
+		}
+		
+		int minCoins = Integer.MAX_VALUE;
+		if(coins[n-1] <= total) {
+			minCoins = 1 + Math.min(minNumCoinMemoization(coins, total-coins[n-1], n, t),
+					minNumCoinMemoization(coins, total, n-1,t));
+		}else {
+			minCoins = minNumCoinRecursive(coins, total, n-1);
+		}
+		t[n] = minCoins == Integer.MAX_VALUE ? -1 : minCoins;
+		return t[n];
+	}
+	
 	
 	private static int minNumCoinTabulation(int[] coins, int total, int n) {
 		int[][] t = new int[n+1][total+1];

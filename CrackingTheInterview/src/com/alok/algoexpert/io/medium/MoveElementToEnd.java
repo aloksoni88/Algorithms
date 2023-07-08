@@ -30,10 +30,11 @@ public class MoveElementToEnd {
 		list.add(6);
 		list.add(7);
 		list.add(8);
-		int[] arr = {2,1,2,2,2,3,4,7};
+		//int[] arr = {2,1,2,2,2,3,4,7};
+		int[] arr = {2,3,4,5,2,2,4,7};
 //		List<Integer> result = moveElementToEnd(list, 9);
 //		System.out.println(result);
-		int[] result = moveToEnd2(arr, 2);
+		int[] result = moveToEnd3(arr, 20);
 		System.out.println(Arrays.toString(result));
 	}
 	public static List<Integer> moveElementToEnd(List<Integer> array, int toMove) {
@@ -95,6 +96,21 @@ public class MoveElementToEnd {
 				arr[i] = arr[moveIndex];
 				arr[moveIndex++] = tmp;
 			}
+		}
+		return arr;
+	}
+	
+	private static int[] moveToEnd3(int[] arr, int toMove) {
+		int swapIndex = -1;
+		for (int i=0; i<arr.length; i++) {
+			if (arr[i] != toMove) {
+				swapIndex++;
+				if (swapIndex != i) {
+					int tmp = arr[i];
+					arr[i] = arr[swapIndex];
+					arr[swapIndex] = tmp;
+				}
+			} 
 		}
 		return arr;
 	}

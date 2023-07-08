@@ -22,17 +22,17 @@ public class Permutations {
 
 		List<List<Integer>> result = getPermutations(list);
 		
-		//int[] arr = {1,2,3};
-		//System.out.println(getPermutations(arr));
+		int[] arr = {1,2,3};
+//		System.out.println(getPermutations(arr));
 //		System.out.println(result.size());
 //		System.out.println(result);
 //		
-		int[] arr = {1,2,3,4};
-		List<int[]> res = permute(arr, 0, arr.length-1, new ArrayList<int[]>());
-		System.out.println(res);
-		for(int i=0; i<res.size(); i++) {
-			System.out.print(Arrays.toString(res.get(i))+", ");	
-		}
+//		int[] arr = {1,2,3};
+//		List<int[]> res = permute(arr, 0, arr.length-1, new ArrayList<int[]>());
+//		System.out.println(res);
+//		for(int i=0; i<res.size(); i++) {
+//			System.out.print(Arrays.toString(res.get(i))+", ");	
+//		}
 //		
 //		ArrayList<int[]> test = new ArrayList<int[]>();
 //		for(int i=0; i<4; i++) {
@@ -50,6 +50,12 @@ public class Permutations {
 //		for(int i=0; i<test.size(); i++) {
 //			System.out.print(Arrays.toString(test.get(i))+", ");	
 //		}
+		
+		
+		ArrayList<int[]> permuation = permute2(arr);
+		for (int[] t : permuation) {
+			System.out.println(Arrays.toString(t));
+		}
 	}
 
 	public static List<List<Integer>> getPermutations(List<Integer> array) {
@@ -114,5 +120,24 @@ public class Permutations {
 		arr[a] = arr[b];
 		arr[b] = tmp;
 		return arr;
+	}
+	
+	private static ArrayList<int[]> permute2(int[] arr) {
+		ArrayList<int[]> list = new ArrayList<>();
+		permute2(arr, 0, list);
+		return list;
+	}
+	
+	private static void permute2(int[] arr, int length, ArrayList<int[]> result) {
+		if (length == arr.length-1) {
+			System.out.println("===" + Arrays.toString(arr) + "===");
+			result.add(arr);
+			return;
+		}
+		for (int i=length; i<arr.length; i++) {
+			swap(length, i, arr);
+			permute2(arr, length+1, result);
+			swap(length, i, arr);
+		}
 	}
 }

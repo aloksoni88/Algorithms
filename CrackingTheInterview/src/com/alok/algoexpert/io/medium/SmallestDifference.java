@@ -14,8 +14,8 @@ public class SmallestDifference {
 		int[] arrayOne = {-1, -5, 10, 20, 288, 3};	//-1, 3, 5 10,20,28
 		int[] arrayTwo = {26, -14, 135, 15, -9,210,39, 289};	//15,17,26,134,135
 		//int[] result = smallestDifference(arrayOne, arrayTwo);
-		int[] result = smallestDifferenceOptimized(arrayOne, arrayTwo);
-//		int[] result = smallestDiff(arrayOne, arrayTwo);
+		//int[] result = smallestDifferenceOptimized(arrayOne, arrayTwo);
+		int[] result = smallestDiff(arrayOne, arrayTwo);
 		System.out.println(Arrays.toString(result));
 	}
 	
@@ -37,7 +37,7 @@ public class SmallestDifference {
 				minDiff = min;
 				arrOneIdx = i;
 				arrTwoIdx = j;
-			}
+			} 
 			if(arrOne[i] < arrTwo[j]) {
 				i++;
 			}else {
