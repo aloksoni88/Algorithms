@@ -13,8 +13,8 @@ public class MinNumberOfJumps {
 
 	public static void main(String[] args) {
 		int[] arr = { 3, 4, 2, 1, 2, 3, 7, 1, 1, 1, 3, 2, 6, 2, 1, 1, 1, 1 };
-		int noOfJumps = minNumberOfJumps(arr);
-//		int noOfJumps = minNumberOfJumpsOptimize(arr);
+		//int noOfJumps = minNumberOfJumps(arr);
+		int noOfJumps = minNumberOfJumpsOptimize(arr);
 		System.out.println("Min no of jumps : " + noOfJumps);
 	}
 

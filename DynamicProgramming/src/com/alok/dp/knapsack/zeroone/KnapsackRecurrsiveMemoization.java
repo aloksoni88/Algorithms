@@ -20,7 +20,8 @@ public class KnapsackRecurrsiveMemoization {
 			}
 		}
 		
-		int result = knapsackRecurrsiveMemoization(value, weight, W, 3);
+		//int result = knapsackRecurrsiveMemoization(value, weight, W, 3);
+		int result = knapsackRecurrsiveMemoization2(value, weight, W, 3, t);
 		System.out.println(result);
 	}
 	
@@ -36,6 +37,22 @@ public class KnapsackRecurrsiveMemoization {
 					knapsackRecurrsiveMemoization(value, weight, W, n-1));
 		}else {// if(weight[n-1] > W) {
 			return t[n][W] = knapsackRecurrsiveMemoization(value, weight, W, n-1);
+		}
+		//return 0;
+	}
+	
+	private static int knapsackRecurrsiveMemoization2(int[] value, int[] weight, int W, int n, int[][] t) {
+		if(n == 0 || W == 0) {
+			return 0;
+		}
+		if(t[n][W] != -1) {
+			return t[n][W];
+		}
+		else if(weight[n-1] <= W) {
+			return t[n][W] = Integer.max(value[n-1] + knapsackRecurrsiveMemoization2(value, weight, W-weight[n-1], n-1, t),
+					knapsackRecurrsiveMemoization2(value, weight, W, n-1, t));
+		}else {// if(weight[n-1] > W) {
+			return t[n][W] = knapsackRecurrsiveMemoization2(value, weight, W, n-1, t);
 		}
 		//return 0;
 	}

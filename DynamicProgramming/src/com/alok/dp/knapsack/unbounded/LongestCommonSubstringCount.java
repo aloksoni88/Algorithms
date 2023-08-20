@@ -6,20 +6,20 @@ package com.alok.dp.knapsack.unbounded;
 /**
  * @author Alok Soni
  * Question
- * Given two strings ‘X’ and ‘Y’, find the length of the longest common substring.
+ * Given two strings ï¿½Xï¿½ and ï¿½Yï¿½, find the length of the longest common substring.
 	Examples :
 	
-	Input : X = “GeeksforGeeks”, y = “GeeksQuiz”
+	Input : X = ï¿½GeeksforGeeksï¿½, y = ï¿½GeeksQuizï¿½
 	Output : 5
-	The longest common substring is “Geeks” and is of length 5.
+	The longest common substring is ï¿½Geeksï¿½ and is of length 5.
 	
-	Input : X = “abcdxyz”, y = “xyzabcd”
+	Input : X = ï¿½abcdxyzï¿½, y = ï¿½xyzabcdï¿½
 	Output : 4
-	The longest common substring is “abcd” and is of length 4.
+	The longest common substring is ï¿½abcdï¿½ and is of length 4.
 	
-	Input : X = “zxabcdezy”, y = “yzabcdezx”
+	Input : X = ï¿½zxabcdezyï¿½, y = ï¿½yzabcdezxï¿½
 	Output : 6
-	The longest common substring is “abcdez” and is of length 6.
+	The longest common substring is ï¿½abcdezï¿½ and is of length 6.
 	
 	https://www.geeksforgeeks.org/longest-common-substring-dp-29/
  */
@@ -28,7 +28,7 @@ public class LongestCommonSubstringCount {
 		String str1 = "abcdxyz";
 		String str2 = "xyzabcd";
 		
-		//int len = lcmRecursive(str1, str2, str1.length(), str2.length(),0);
+//		int len = lcmRecursive(str1, str2, str1.length(), str2.length(),0);
 		int len = lcmOptimized(str1, str2);
 		System.out.println("Longest common substring is : " + len);
 	}

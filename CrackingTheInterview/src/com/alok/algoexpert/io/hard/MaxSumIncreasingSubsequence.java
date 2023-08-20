@@ -19,6 +19,7 @@ public class MaxSumIncreasingSubsequence {
 		List<List<Integer>> result = maxSumIncreasingSubsequence(arr);
 		System.out.println(result);
 	}
+
 	
 
 	public static List<List<Integer>> maxSumIncreasingSubsequence(int[] array) {

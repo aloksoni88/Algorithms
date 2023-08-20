@@ -6,13 +6,13 @@ package com.alok.dp.knapsack.zeroone;
  */
 public class MinimumSubsetSum {
 	public static void main(String[] args) {
-		int arr[] = {1, 6, 11, 5};
+		int arr[] = {6, 1, 11, 5};
 		int n = arr.length;
 		int sum = 0; 
 		for(int i=0; i<n; i++) {
 			sum = sum  + arr[i];
 		}
-		//int result = minimumSubsetSumRecursive(arr, n, sum,Integer.MAX_VALUE);
+//		int result = minimumSubsetSumRecursive(arr, n, sum,Integer.MAX_VALUE);
 		int result = minimumSubsetSumTabulation(arr, n, sum,Integer.MAX_VALUE);
 		System.out.println(result);
 	}

@@ -21,6 +21,7 @@ public class MyLinkedList {
 		}
 	}
 
+	
 	private Node first;
 	private Node last;
 
@@ -83,7 +84,7 @@ public class MyLinkedList {
 			Node current = first;
 			int currentIndex = 1;
 
-			uuuuuwhile(current != null && index != currentIndex) {
+			while(current != null && index != currentIndex) {
 				current = current.next;
 				currentIndex++;
 			}
@@ -341,12 +342,11 @@ public class MyLinkedList {
 
 	public void deleteMidWithoutHead(Node nodeToBeDeleted) {
 		if (nodeToBeDeleted.next == null) {
+			nodeToBeDeleted = null;
 			return;
 		} else {
-			Node tmp = nodeToBeDeleted.next;
 			nodeToBeDeleted.value = nodeToBeDeleted.next.value;
 			nodeToBeDeleted.next = nodeToBeDeleted.next.next;
-			tmp = null;
 		}
 	}
 
@@ -384,6 +384,67 @@ public class MyLinkedList {
 		for(int i : arrayList) {
 			addItemToPartitionList(i , item);
 		}
+	}
+	
+	public Node partitionOptimize(Node head, int item) {
+		Node less_head = null, less_last = null;
+		Node equal_head = null, equal_last = null;
+		Node greater_head = null, greater_last = null;
+		
+		Node current = head;
+		Node nextNode;
+		while (current != null) {
+			nextNode = current.next;
+			if (current.value < item) {
+				if (less_head == null) {
+					less_head = current;
+					less_last = less_head;
+					less_last.next = null;
+				} else {
+					less_last.next = current;
+					less_last =  less_last.next;
+					less_last.next = null;
+				}
+			} else if(current.value == item) {
+				if (equal_head == null) {
+					equal_head = current;
+					equal_last = equal_head;
+					equal_last.next = null;
+				} else {
+					equal_last.next = current;
+					equal_last = equal_last.next;
+					equal_last.next = null;
+				}
+			} else {
+				if (greater_head == null) {
+					greater_head = current;
+					greater_last = greater_head;
+					greater_last.next = null;
+				} else {
+					greater_last.next = current;
+					greater_last = greater_last.next;
+					greater_last.next = null;
+				}
+			}
+			current = nextNode;
+		}
+		if (less_head == null) {
+			if (equal_head == null) {
+				return greater_head;
+			}
+			equal_last.next = greater_head;
+			return equal_head;
+		}
+		
+		if (equal_head == null) {
+			less_last.next = greater_head;
+			return less_head;
+		}
+		
+		less_last.next = equal_head;
+		equal_last.next = greater_head;
+		return less_head;
+		
 	}
 
 	private void addItemToPartitionList(int item, int partitionValue) {
@@ -498,14 +559,24 @@ public class MyLinkedList {
 	
 	public static void main(String[] args) {
 		MyLinkedList list = new MyLinkedList();
-		list.addFirst(5);
-		list.addLast(10);
-		list.addLast(20);
-		list.add(30);
-		list.add(40);
-		list.addLast(50);
+		list.addFirst(1);
+		list.addLast(4);
+		list.addLast(3);
+		list.add(2);
+		list.add(5);
+		list.addLast(2);
+		list.addLast(3);
 
 		System.out.println(list.toString());
-
+		System.out.println(list.first);
+		Node head = list.partitionOptimize(list.first, 3);
+		
+		Node current = head;
+		while (current != null) {
+			System.out.print(current.value + " ");
+			current = current.next;
+		}
+		list.displayList();
+		
 	}
 }

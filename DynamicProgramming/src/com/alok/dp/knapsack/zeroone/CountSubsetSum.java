@@ -9,8 +9,8 @@ public class CountSubsetSum {
 		int[] arr = {1, 2, 6, 3};
 		int sum = 6;
 		int n = arr.length;
-		int count = countSubsetSumRecursive(arr, sum, n);
-		//int count = countSubsetSumTabulation(arr, sum, n);
+		//int count = countSubsetSumRecursive(arr, sum, n);
+		int count = countSubsetSumTabulation(arr, sum, n);
 		System.out.println(count);
 	}
 	

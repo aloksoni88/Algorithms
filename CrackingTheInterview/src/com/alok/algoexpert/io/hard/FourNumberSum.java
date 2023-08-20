@@ -39,9 +39,6 @@ public class FourNumberSum {
 			System.out.print(entry.getKey() + ": " + Arrays.toString(entry.getValue()) + ", ");
 		}
 		System.out.println();
-//	    map.keySet().forEach(key -> System.out.print(key+", "));
-//	    System.out.println();
-//		map.values().forEach( val -> System.out.print(Arrays.toString(val)));
 		for(int i=0; i<arr.length-1; i++) {
 			for(int j=i+1; j<arr.length; j++) {
 				int sum = arr[i] + arr[j];

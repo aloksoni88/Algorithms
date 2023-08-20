@@ -68,6 +68,7 @@ public class WaterArea {
 
 		int[] area = new int[heights.length];
 		int result = 0;
+		//int[] arr = { 0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3 };
 		for (int i = 0; i < heights.length; i++) {
 			int minHeight = Math.min(leftMax[i], rightMax[i]);
 			if (heights[i] < minHeight) {

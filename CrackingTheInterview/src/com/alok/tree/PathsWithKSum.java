@@ -96,26 +96,39 @@ public class PathsWithKSum {
 //		5 2 1 
 //		-3 11 
 		
+//		pathSum.node = pathSum.new Node(1);
+//		pathSum.node.left = pathSum.new Node(3);
+//		pathSum.node.right = pathSum.new Node(-1);
+//		
+//		pathSum.node.left.left = pathSum.new Node(2);
+//		pathSum.node.left.right = pathSum.new Node(1);
+//		
+//		pathSum.node.left.right.left = pathSum.new Node(1);
+//		
+//		pathSum.node.right.left = pathSum.new Node(4);
+//		pathSum.node.right.right = pathSum.new Node(5);
+//		
+//		pathSum.node.right.left.left = pathSum.new Node(1);
+//		pathSum.node.right.left.right = pathSum.new Node(2);
+//		
+//		pathSum.node.right.right.right = pathSum.new Node(6);
+//	
+//		pathSum.displayTree(pathSum.node);
+		
+		
 		pathSum.node = pathSum.new Node(1);
-		pathSum.node.left = pathSum.new Node(3);
-		pathSum.node.right = pathSum.new Node(-1);
+		pathSum.node.left = pathSum.new Node(2);
+		pathSum.node.right = pathSum.new Node(3);
 		
-		pathSum.node.left.left = pathSum.new Node(2);
-		pathSum.node.left.right = pathSum.new Node(1);
+		pathSum.node.left.left = pathSum.new Node(4);
+		pathSum.node.left.right = pathSum.new Node(5);
 		
-		pathSum.node.left.right.left = pathSum.new Node(1);
-		
-		pathSum.node.right.left = pathSum.new Node(4);
-		pathSum.node.right.right = pathSum.new Node(5);
-		
-		pathSum.node.right.left.left = pathSum.new Node(1);
-		pathSum.node.right.left.right = pathSum.new Node(2);
-		
-		pathSum.node.right.right.right = pathSum.new Node(6);
+		pathSum.node.right.left = pathSum.new Node(6);
+		pathSum.node.right.right = pathSum.new Node(7);
 	
 		pathSum.displayTree(pathSum.node);
 		
-		int sum = 5;
+		int sum = 8;
 		pathSum.findPathSum(pathSum.node, sum);
 		System.out.println("Total no of path for sum " + sum  + " = " + pathSum.pathCount);
 	}

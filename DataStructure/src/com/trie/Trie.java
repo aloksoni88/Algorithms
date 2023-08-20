@@ -3,17 +3,16 @@ package com.trie;
 
 public class Trie {
 	public static void main(String[] args) {
-		Trie trie = new Trie();
 		String[] words = {"the", "a", "there", "their", "any"};
 		for (int i=0; i<words.length; i++) {
-			trie.insert(words[i]);
+			insert(words[i]);
 		}
 		Node current = root;
-		trie.printTrie(current);
+		printTrie(current);
 		
 		String[] searchKeys = {"their", "thor", "an"};
 		for (int i=0; i< searchKeys.length; i++) {
-			System.out.println(trie.search(searchKeys[i]));
+			System.out.println(search(searchKeys[i]));
 		}
 		
 	}

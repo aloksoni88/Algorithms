@@ -11,9 +11,9 @@ package com.alok.dp.knapsack.unbounded;
  */
 public class PrintLongestCommonSubsequence {
 	public static void main(String[] args) {
-		String inputStr1 = "ABCDGH";
-		String inputStr2 = "AEDFHR";
-//		StringBuffer lcm = lcmRecursive(inputStr1,inputStr2,inputStr1.length(),inputStr2.length(),new StringBuffer(""));
+		String inputStr1 = "AGGTAB";//"ABCDGH";
+		String inputStr2 = "GXTXAYB";//"AEDFHR";
+		//StringBuffer lcm = lcmRecursive(inputStr1,inputStr2,inputStr1.length(),inputStr2.length(),new StringBuffer(""));
 		StringBuffer lcm = lcmOptimized(inputStr1,inputStr2);
 		System.out.println("Longest common subsequence is : " + lcm);
 	}

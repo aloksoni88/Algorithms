@@ -25,13 +25,15 @@ public class HeapSort {
 		for(int i= n/2-1; i>=0; i--) {
 			heapify(array, i, n);
 		}
-		
+		System.out.println(Arrays.toString(array));
+		System.out.println();
 		for(int i= n-1; i>=0; i--) {
 			int tmp = array[0];
 			array[0] = array[i];
 			array[i] = tmp;
 			
 			heapify(array, 0, i);
+			System.out.println(Arrays.toString(array));
 		}
 		return array;
 	}

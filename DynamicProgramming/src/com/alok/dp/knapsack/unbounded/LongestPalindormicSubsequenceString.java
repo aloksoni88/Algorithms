@@ -19,7 +19,7 @@ package com.alok.dp.knapsack.unbounded;
  */
 public class LongestPalindormicSubsequenceString {
 	public static void main(String[] args) {
-		String str = "abcbdbcdbbababdddb";
+		String str = "BBABCBCAB";
 		String reverseStr = new StringBuffer(str).reverse().toString();
 		String result = longestPalindromicSubsequenceRecursive(str, reverseStr, str.length(), reverseStr.length());
 //		String result = lPSOptimized(str, reverseStr);

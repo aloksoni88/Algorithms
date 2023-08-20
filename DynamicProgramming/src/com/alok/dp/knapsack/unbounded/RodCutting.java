@@ -33,9 +33,10 @@ public class RodCutting {
 	 */
 	public static void main(String[] args) {
 		int[] length = {1, 2, 3, 4, 5, 6, 7, 8};
-		int[] price =  {1, 5, 8, 9, 10,17,17,20};
+		//int[] price =  {1, 5, 8, 9, 10,17,17,20};
+		int[] price = {3, 5, 8, 9, 10 , 17 , 17 , 20};
 		int totalLength = 8;
-		//int maxValue = rodCutting(length, price, totalLength, length.length);
+		//int maxValue = rodCuttingRecursive(length, price, totalLength, length.length);
 		int maxValue = rodCuttingTabulation(length, price, totalLength, length.length);
 		System.out.println(maxValue);
 	}
@@ -45,7 +46,7 @@ public class RodCutting {
 			return 0;
 		}
 		if(length[n-1] <= totalLength) {
-			return Math.max(price[n-1] + rodCuttingRecursive(length, price, (totalLength - length[n-1]), n-1), 
+			return Integer.max(price[n-1] + rodCuttingRecursive(length, price, (totalLength - length[n-1]), n), 
 					rodCuttingRecursive(length, price, totalLength, n-1));	
 		}else {
 			return rodCuttingRecursive(length, price, totalLength, n-1);
@@ -59,7 +60,7 @@ public class RodCutting {
 				if(i == 0 || j == 0) {
 					t[i][j] = 0;
 				}else if(length[i-1] <= j) {
-					t[i][j] = Math.max(price[i-1] + t[i-1][j-length[i-1]], t[i-1][j]); 
+					t[i][j] = Math.max(price[i-1] + t[i][j-length[i-1]], t[i-1][j]); 
 				}else {
 					t[i][j] = t[i-1][j];
 				}

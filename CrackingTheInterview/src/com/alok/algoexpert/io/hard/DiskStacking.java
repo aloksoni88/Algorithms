@@ -50,7 +50,7 @@ public class DiskStacking {
 		for(Integer[] disk : disks) {
 			System.out.print(Arrays.toString(disk) + " ");
 		}
-		
+		System.out.println();
 		int[] heights = new int[disks.size()];
 		Integer[] index = new Integer[disks.size()];
 		Arrays.fill(index, null);
@@ -58,6 +58,7 @@ public class DiskStacking {
 		for(int i=0; i<disks.size(); i++) {
 			heights[i] = disks.get(i)[2];
 		}
+		System.out.println(Arrays.toString(heights));
 		
 		int maxHeightIdx = 0;
 		for(int i=1; i<disks.size(); i++) {
@@ -86,8 +87,7 @@ public class DiskStacking {
 		while(index[maxHeightIdx] != null) {
 			result.add(0,disks.get(index[maxHeightIdx]));
 			maxHeightIdx = index[maxHeightIdx];
-		}
-		
+		}		
 		return result;
 	}
 	
